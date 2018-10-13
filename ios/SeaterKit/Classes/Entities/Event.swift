@@ -15,6 +15,6 @@ public struct Event {
     public let title: String
     public let location: String
     public let date: Date
-    public let imageUrl: String
+    public let imageUrl: String // convert to URL
     public let favorited: Bool
 }

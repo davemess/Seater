@@ -9,13 +9,16 @@
 import UIKit
 import AppAnalytics
 import AppTheme
+import SeaterKit
 
 /// Core factory for producing components necessary for app launch and run.
 class AppFactory {
+    
+    typealias SeaterServiceProvider = (AppServiceProvider & SeaterKitServiceProvider)
 
     // MARK: - private properties
     
-    private let appServiceProvider: AppServiceProvider
+    private let serviceProvider: SeaterServiceProvider
     
     private lazy var viewControllerFactory: ViewControllerFactory = {
         return ViewControllerFactory()
@@ -25,7 +28,7 @@ class AppFactory {
     
     var launchServices: [LaunchService] {
         var launchServices: [LaunchService] = []
-        for service in appServiceProvider.services {
+        for service in serviceProvider.services {
             if let launchService = service as? LaunchService {
                 launchServices.append(launchService)
             }
@@ -34,19 +37,21 @@ class AppFactory {
     }
     
     lazy var analyticsRecorder: AnalyticsRecorder = {
-        let service = self.appServiceProvider.analyticsService
+        let service = self.serviceProvider.analyticsService
         return service.analyticsRecorder()
     }()
     
     lazy var applicationTheme: AppearanceTheme = {
-        let service = self.appServiceProvider.themeProvider
+        let service = self.serviceProvider.themeProvider
         return service.theme
     }()
     
+    var seaterKitServiceProvider: SeaterKitServiceProvider { return serviceProvider }
+    
     // MARK: - lifecyle
     
-    init(_ appServiceProvider: AppServiceProvider) {
-        self.appServiceProvider = appServiceProvider
+    init(_ serviceProvider: SeaterServiceProvider) {
+        self.serviceProvider = serviceProvider
     }
     
     // MARK: - public funcs

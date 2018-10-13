@@ -32,8 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         guard let buildConfiguration = BuildConfiguration(bundle: Bundle.main) else { preconditionFailure("BuildConfiguration could not be assessed.") }
         
         // Core components
-        let appServiceProvider: AppServiceProvider = AppServices(buildConfiguration)
-        self.appFactory = AppFactory(appServiceProvider)
+        let appServices = AppServices(buildConfiguration)
+        self.appFactory = AppFactory(appServices)
         
         // View heirarchy
         let screenFrame = UIScreen.main.bounds
@@ -84,7 +84,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func initializeSeaterKit() {
-        SeaterKit.initialize()
+        let serviceProvider: SeaterKitServiceProvider = appFactory.seaterKitServiceProvider
+        SeaterKit.initialize(with: serviceProvider)
     }
     
     private func presentKeyWindow(_ animated: Bool = false) {

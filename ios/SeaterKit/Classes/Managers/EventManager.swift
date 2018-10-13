@@ -7,29 +7,34 @@
 //
 
 import Foundation
+import Results
 
 /// Manages Event operations.
 public class EventManager {
     
     // MARK: - private properties
     
+    private let eventsService: EventsService
+
     // MARK: - lifecycle
+
+    init(eventsService: EventsService) {
+        self.eventsService = eventsService
+    }
     
     // MARK: - public funcs
     
     public func find(handler: @escaping (Result<[Event]>) -> Void) {
-        var events: [Event] = []
-        for _ in 0..<50 {
-            let event = Event(identifier: "1234",
-                title: "Hello",
-                location: "World",
-                date: Date(),
-                imageUrl: "abc",
-                favorited: false
-            )
-            events.append(event)
+        eventsService.find(query: "") { (result) in
+            switch result {
+            case .success(let baseEvents):
+                let events = baseEvents.map {
+                    return Event(identifier: $0.identifier, title: $0.title, location: $0.location, date: $0.date, imageUrl: $0.imageUrl, favorited: false)
+                }
+                handler(.success(events))
+            case .failure(let error):
+                handler(.failure(error))
+            }
         }
-        
-        handler(.success(events))
     }
 }

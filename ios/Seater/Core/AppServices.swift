@@ -8,9 +8,11 @@
 
 import Foundation
 import AppConfiguration
+import SeaterKit
+import SeatGeekSDK
 
 /// Core class for providing and configuring external services.
-class AppServices: AppServiceProvider {
+class AppServices: AppServiceProvider, SeaterKitServiceProvider {
     
     // MARK: - public properties
     
@@ -22,9 +24,18 @@ class AppServices: AppServiceProvider {
         return StandardThemeProvider(deployment)
     }()
     
+    lazy var eventsService: EventsService = {
+        return seatGeek.eventsService
+    }()
+    
     // MARK: - private properties
     
     private let deployment: Deployment
+    
+    private lazy var seatGeek: SeatGeekSDK = {
+        let keys = Keys.keySet(for: deployment)
+        return SeatGeekSDK(with: keys.seatGeekClientId)
+    }()
     
     // MARK: - lifecycle
     

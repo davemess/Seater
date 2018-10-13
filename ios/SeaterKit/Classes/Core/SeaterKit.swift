@@ -21,18 +21,21 @@ public class SeaterKit {
     
     public lazy var eventManager: EventManager = {
         precondition(isInitialized, initAssertion)
-        let eventManager = EventManager()
+        let eventsService = serviceProvider.eventsService
+        let eventManager = EventManager(eventsService: eventsService)
         return eventManager
     }()
     
     // MARK: - private properties
     
+    private var serviceProvider: SeaterKitServiceProvider!
     private var isInitialized: Bool = false
     private let initAssertion = "BrickListsKit must be initialized before use."
     
     // MARK: - lifecycle
     
-    public static func initialize() {
+    public static func initialize(with provider: SeaterKitServiceProvider) {
+        shared.serviceProvider = provider
         shared.isInitialized = true
         
         os_log("SeaterKit initialized", log: log, type: .info)
