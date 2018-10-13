@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		CE7B78632172556B00691715 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B78622172556B00691715 /* AppDelegate.swift */; };
 		CE7B78652172556B00691715 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B78642172556B00691715 /* ViewController.swift */; };
-		CE7B78682172556B00691715 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE7B78662172556B00691715 /* Main.storyboard */; };
 		CE7B786A2172556D00691715 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE7B78692172556D00691715 /* Assets.xcassets */; };
 		CE7B786D2172556D00691715 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE7B786B2172556D00691715 /* LaunchScreen.storyboard */; };
 		CE7B787C2172570F00691715 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = CE7B78792172570F00691715 /* Debug.xcconfig */; };
@@ -27,6 +26,11 @@
 		CE7B78E021726BB600691715 /* AppAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7B78DF21726BB600691715 /* AppAnalytics.framework */; };
 		CE7B78E121726BB600691715 /* AppAnalytics.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE7B78DF21726BB600691715 /* AppAnalytics.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE7B78EA21726EF400691715 /* SeaterAnalyticEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B78E921726EF400691715 /* SeaterAnalyticEvent.swift */; };
+		CE7B78ED2172719700691715 /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B78EC2172719700691715 /* NavigationCoordinator.swift */; };
+		CE7B78EF2172733A00691715 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B78EE2172733A00691715 /* AppCoordinator.swift */; };
+		CE7B78F22172746D00691715 /* NavigationCoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B78F12172746D00691715 /* NavigationCoordinatorFactory.swift */; };
+		CE7B78F42172751B00691715 /* EventsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B78F32172751B00691715 /* EventsCoordinator.swift */; };
+		CE7B78F62172778B00691715 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7B78F52172778B00691715 /* ViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -48,7 +52,6 @@
 		CE7B785F2172556B00691715 /* Seater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Seater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7B78622172556B00691715 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE7B78642172556B00691715 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CE7B78672172556B00691715 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE7B78692172556D00691715 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE7B786C2172556D00691715 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE7B786E2172556D00691715 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -65,6 +68,11 @@
 		CE7B78C421726A1700691715 /* CrashlyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashlyticsService.swift; sourceTree = "<group>"; };
 		CE7B78DF21726BB600691715 /* AppAnalytics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AppAnalytics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7B78E921726EF400691715 /* SeaterAnalyticEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaterAnalyticEvent.swift; sourceTree = "<group>"; };
+		CE7B78EC2172719700691715 /* NavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCoordinator.swift; sourceTree = "<group>"; };
+		CE7B78EE2172733A00691715 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		CE7B78F12172746D00691715 /* NavigationCoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCoordinatorFactory.swift; sourceTree = "<group>"; };
+		CE7B78F32172751B00691715 /* EventsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsCoordinator.swift; sourceTree = "<group>"; };
+		CE7B78F52172778B00691715 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +112,8 @@
 			isa = PBXGroup;
 			children = (
 				CE7B7876217255BC00691715 /* Core */,
+				CE7B78F02172746000691715 /* Factories */,
+				CE7B78EB2172718700691715 /* Navigation Coordinators */,
 				CE7B7874217255AC00691715 /* Resources */,
 				CE7B78B72172667E00691715 /* Services */,
 				CE7B7877217255C100691715 /* Support Files */,
@@ -116,7 +126,6 @@
 		CE7B7874217255AC00691715 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CE7B78662172556B00691715 /* Main.storyboard */,
 				CE7B78692172556D00691715 /* Assets.xcassets */,
 				CE7B786B2172556D00691715 /* LaunchScreen.storyboard */,
 			);
@@ -127,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				CE7B78642172556B00691715 /* ViewController.swift */,
+				CE7B78F52172778B00691715 /* ViewController.xib */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -196,6 +206,24 @@
 			path = Values;
 			sourceTree = "<group>";
 		};
+		CE7B78EB2172718700691715 /* Navigation Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				CE7B78EE2172733A00691715 /* AppCoordinator.swift */,
+				CE7B78F32172751B00691715 /* EventsCoordinator.swift */,
+				CE7B78EC2172719700691715 /* NavigationCoordinator.swift */,
+			);
+			path = "Navigation Coordinators";
+			sourceTree = "<group>";
+		};
+		CE7B78F02172746000691715 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				CE7B78F12172746D00691715 /* NavigationCoordinatorFactory.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -260,8 +288,8 @@
 				CE7B787C2172570F00691715 /* Debug.xcconfig in Resources */,
 				CE7B786D2172556D00691715 /* LaunchScreen.storyboard in Resources */,
 				CE7B786A2172556D00691715 /* Assets.xcassets in Resources */,
-				CE7B78682172556B00691715 /* Main.storyboard in Resources */,
 				CE7B787D2172570F00691715 /* Release.xcconfig in Resources */,
+				CE7B78F62172778B00691715 /* ViewController.xib in Resources */,
 				CE7B787E2172570F00691715 /* Base.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,9 +343,13 @@
 				CE7B78BD217266C900691715 /* AppFactory.swift in Sources */,
 				CE7B78EA21726EF400691715 /* SeaterAnalyticEvent.swift in Sources */,
 				CE7B78B52172650700691715 /* AppLogger.swift in Sources */,
+				CE7B78F42172751B00691715 /* EventsCoordinator.swift in Sources */,
 				CE7B78C521726A1700691715 /* CrashlyticsService.swift in Sources */,
 				CE7B78B92172668C00691715 /* AppServices.swift in Sources */,
+				CE7B78ED2172719700691715 /* NavigationCoordinator.swift in Sources */,
+				CE7B78EF2172733A00691715 /* AppCoordinator.swift in Sources */,
 				CE7B78BB2172669F00691715 /* Service.swift in Sources */,
+				CE7B78F22172746D00691715 /* NavigationCoordinatorFactory.swift in Sources */,
 				CE7B78652172556B00691715 /* ViewController.swift in Sources */,
 				CE7B78632172556B00691715 /* AppDelegate.swift in Sources */,
 			);
@@ -326,14 +358,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CE7B78662172556B00691715 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CE7B78672172556B00691715 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CE7B786B2172556D00691715 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -35,4 +35,17 @@ class AppFactory {
     init(_ appServices: AppServices) {
         self.appServices = appServices
     }
+    
+    // MARK: - public funcs
+    
+    func rootCoordinator(with navigationController: UINavigationController) -> NavigationCoordinator {
+        let navCoordinatorFactory = navigationCoordinatorFactory()
+        return AppCoordinator(navigationController, navigationCoordinatorFactory: navCoordinatorFactory)
+    }
+    
+    // MARK: - private funcs
+    
+    private func navigationCoordinatorFactory() -> NavigationCoordinatorFactory {
+        return NavigationCoordinatorFactory()
+    }
 }

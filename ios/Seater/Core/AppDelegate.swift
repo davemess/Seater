@@ -20,7 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // View heirarchy
     var window: UIWindow?
-    private let rootNavigationController = UINavigationController()
+    private let rootController: UINavigationController = UINavigationController()
+    private var rootCoordinator: NavigationCoordinator
     
     // Util
     private let log = AppLogger.log(.core)
@@ -30,9 +31,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     override init() {
         guard let buildConfiguration = BuildConfiguration(bundle: Bundle.main) else { preconditionFailure("BuildConfiguration could not be assessed.") }
         
+        // Core components
         self.buildConfiguration = buildConfiguration
         let appServices = AppServices(self.buildConfiguration)
         self.appFactory = AppFactory(appServices)
+        
+        // View heirarchy
+        let screenFrame = UIScreen.main.bounds
+        self.window = UIWindow(frame: screenFrame)
+        self.window?.rootViewController = self.rootController
+        self.rootCoordinator = self.appFactory.rootCoordinator(with: rootController)
         
         super.init()
     }
@@ -44,6 +52,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Initialize services
         initializeLaunchServices(appFactory.launchServices, launchOptions: launchOptions)
         initializeAnalytics()
+        
+        presentKeyWindow(false)
         
         AnalyticsManager.shared.log(SeaterAnalyticEvent.appLaunch.toAnalyticEvent())
         os_log("didFinishLaunchingWithOptions with configuration %{public}@ and launchOptions: %{public}@", log: log, type: .info, buildConfiguration.description, launchOptions ?? "[]")
@@ -62,5 +72,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func initializeAnalytics() {
         let recorder = appFactory.analyticsRecorder
         AnalyticsManager.shared.register(recorder)
+    }
+    
+    private func presentKeyWindow(_ animated: Bool = false) {
+        window?.makeKeyAndVisible()
+        rootCoordinator.start(animated)
     }
 }
