@@ -17,6 +17,10 @@ class AppFactory {
     
     private let appServiceProvider: AppServiceProvider
     
+    private lazy var viewControllerFactory: ViewControllerFactory = {
+        return ViewControllerFactory()
+    }()
+    
     // MARK: - public properties
     
     var launchServices: [LaunchService] {
@@ -55,6 +59,6 @@ class AppFactory {
     // MARK: - private funcs
     
     private func navigationCoordinatorFactory() -> NavigationCoordinatorFactory {
-        return NavigationCoordinatorFactory()
+        return NavigationCoordinatorFactory(viewControllerFactory)
     }
 }

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CE7B78632172556B00691715 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B78622172556B00691715 /* AppDelegate.swift */; };
-		CE7B78652172556B00691715 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B78642172556B00691715 /* ViewController.swift */; };
+		CE7B78652172556B00691715 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B78642172556B00691715 /* EventListViewController.swift */; };
 		CE7B786A2172556D00691715 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE7B78692172556D00691715 /* Assets.xcassets */; };
 		CE7B786D2172556D00691715 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE7B786B2172556D00691715 /* LaunchScreen.storyboard */; };
 		CE7B787C2172570F00691715 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = CE7B78792172570F00691715 /* Debug.xcconfig */; };
@@ -30,12 +30,13 @@
 		CE7B78EF2172733A00691715 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B78EE2172733A00691715 /* AppCoordinator.swift */; };
 		CE7B78F22172746D00691715 /* NavigationCoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B78F12172746D00691715 /* NavigationCoordinatorFactory.swift */; };
 		CE7B78F42172751B00691715 /* EventsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B78F32172751B00691715 /* EventsCoordinator.swift */; };
-		CE7B78F62172778B00691715 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7B78F52172778B00691715 /* ViewController.xib */; };
+		CE7B78F62172778B00691715 /* EventListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7B78F52172778B00691715 /* EventListViewController.xib */; };
 		CE7B7905217277E300691715 /* AppTheme.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7B7904217277E300691715 /* AppTheme.framework */; };
 		CE7B7906217277E300691715 /* AppTheme.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE7B7904217277E300691715 /* AppTheme.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE7B790F2172795E00691715 /* ThemeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B790E2172795E00691715 /* ThemeProvider.swift */; };
 		CE7B791121727E6D00691715 /* AppServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B791021727E6D00691715 /* AppServiceProvider.swift */; };
 		CE7B791421727F7300691715 /* StandardTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B791321727F7300691715 /* StandardTheme.swift */; };
+		CEE1630C217288C20042E99C /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1630B217288C20042E99C /* ViewControllerFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -57,7 +58,7 @@
 /* Begin PBXFileReference section */
 		CE7B785F2172556B00691715 /* Seater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Seater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7B78622172556B00691715 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CE7B78642172556B00691715 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CE7B78642172556B00691715 /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
 		CE7B78692172556D00691715 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE7B786C2172556D00691715 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE7B786E2172556D00691715 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,11 +79,12 @@
 		CE7B78EE2172733A00691715 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		CE7B78F12172746D00691715 /* NavigationCoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCoordinatorFactory.swift; sourceTree = "<group>"; };
 		CE7B78F32172751B00691715 /* EventsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsCoordinator.swift; sourceTree = "<group>"; };
-		CE7B78F52172778B00691715 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		CE7B78F52172778B00691715 /* EventListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventListViewController.xib; sourceTree = "<group>"; };
 		CE7B7904217277E300691715 /* AppTheme.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AppTheme.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7B790E2172795E00691715 /* ThemeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeProvider.swift; sourceTree = "<group>"; };
 		CE7B791021727E6D00691715 /* AppServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServiceProvider.swift; sourceTree = "<group>"; };
 		CE7B791321727F7300691715 /* StandardTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardTheme.swift; sourceTree = "<group>"; };
+		CEE1630B217288C20042E99C /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,8 +149,7 @@
 		CE7B7875217255B600691715 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CE7B78642172556B00691715 /* ViewController.swift */,
-				CE7B78F52172778B00691715 /* ViewController.xib */,
+				CEE1630D21728A560042E99C /* Events */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -235,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				CE7B78F12172746D00691715 /* NavigationCoordinatorFactory.swift */,
+				CEE1630B217288C20042E99C /* ViewControllerFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -253,6 +255,23 @@
 				CE7B791321727F7300691715 /* StandardTheme.swift */,
 			);
 			path = Themes;
+			sourceTree = "<group>";
+		};
+		CEE1630D21728A560042E99C /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				CEE1630E21728A5F0042E99C /* List */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		CEE1630E21728A5F0042E99C /* List */ = {
+			isa = PBXGroup;
+			children = (
+				CE7B78642172556B00691715 /* EventListViewController.swift */,
+				CE7B78F52172778B00691715 /* EventListViewController.xib */,
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,7 +339,7 @@
 				CE7B786D2172556D00691715 /* LaunchScreen.storyboard in Resources */,
 				CE7B786A2172556D00691715 /* Assets.xcassets in Resources */,
 				CE7B787D2172570F00691715 /* Release.xcconfig in Resources */,
-				CE7B78F62172778B00691715 /* ViewController.xib in Resources */,
+				CE7B78F62172778B00691715 /* EventListViewController.xib in Resources */,
 				CE7B787E2172570F00691715 /* Base.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,7 +402,8 @@
 				CE7B791121727E6D00691715 /* AppServiceProvider.swift in Sources */,
 				CE7B78BB2172669F00691715 /* AppService.swift in Sources */,
 				CE7B78F22172746D00691715 /* NavigationCoordinatorFactory.swift in Sources */,
-				CE7B78652172556B00691715 /* ViewController.swift in Sources */,
+				CE7B78652172556B00691715 /* EventListViewController.swift in Sources */,
+				CEE1630C217288C20042E99C /* ViewControllerFactory.swift in Sources */,
 				CE7B790F2172795E00691715 /* ThemeProvider.swift in Sources */,
 				CE7B78632172556B00691715 /* AppDelegate.swift in Sources */,
 			);

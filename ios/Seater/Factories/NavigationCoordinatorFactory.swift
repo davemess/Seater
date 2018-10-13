@@ -15,12 +15,22 @@ class NavigationCoordinatorFactory {
         case events(_ navigationController: UINavigationController)
     }
     
+    // MARK: - lifecycle
+    
+    private let viewControllerFactory: ViewControllerFactory
+    
+    // MARK: - lifecycle
+    
+    init(_ viewControllerFactory: ViewControllerFactory) {
+        self.viewControllerFactory = viewControllerFactory
+    }
+    
     // MARK: - public
     
     func coordinator(for type: CoordinatorType) -> NavigationCoordinator {
         switch type {
         case .events(let navController):
-            return EventsCoordinator(navController)
+            return EventsCoordinator(navController, viewControllerFactory: viewControllerFactory)
         }
     }
 }
