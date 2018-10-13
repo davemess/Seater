@@ -12,22 +12,26 @@ import AppConfiguration
 /// Core class for providing and configuring external services.
 class AppServices {
     
-    // MARK: - properties
+    // MARK: - public properties
     
-    lazy var services: [Service] = {
-        let deployment = self.buildConfiguration.deployment
-        
+    var services: [Service] {
         // Add third-party services which are required for application lifecycle
         return [
-            CrashlyticsService(deployment)
+           analyticsService
         ]
+    }
+    
+    lazy var analyticsService: AnalyticsService = {
+        return CrashlyticsService(deployment)
     }()
     
-    private var buildConfiguration: BuildConfiguration
+    // MARK: - private properties
+    
+    private let deployment: Deployment
     
     // MARK: - lifecycle
     
     init(_ buildConfiguration: BuildConfiguration) {
-        self.buildConfiguration = buildConfiguration
+        self.deployment = buildConfiguration.deployment
     }
 }

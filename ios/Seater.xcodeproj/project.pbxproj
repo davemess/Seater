@@ -24,6 +24,9 @@
 		CE7B78C1217269E100691715 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7B78BF217269E100691715 /* Fabric.framework */; };
 		CE7B78C2217269E100691715 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7B78C0217269E100691715 /* Crashlytics.framework */; };
 		CE7B78C521726A1700691715 /* CrashlyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B78C421726A1700691715 /* CrashlyticsService.swift */; };
+		CE7B78E021726BB600691715 /* AppAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7B78DF21726BB600691715 /* AppAnalytics.framework */; };
+		CE7B78E121726BB600691715 /* AppAnalytics.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE7B78DF21726BB600691715 /* AppAnalytics.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CE7B78EA21726EF400691715 /* SeaterAnalyticEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B78E921726EF400691715 /* SeaterAnalyticEvent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +37,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				CE7B78AA2172642900691715 /* AppConfiguration.framework in Embed Frameworks */,
+				CE7B78E121726BB600691715 /* AppAnalytics.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -59,6 +63,8 @@
 		CE7B78BF217269E100691715 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		CE7B78C0217269E100691715 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		CE7B78C421726A1700691715 /* CrashlyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashlyticsService.swift; sourceTree = "<group>"; };
+		CE7B78DF21726BB600691715 /* AppAnalytics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AppAnalytics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE7B78E921726EF400691715 /* SeaterAnalyticEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaterAnalyticEvent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +75,7 @@
 				CE7B78A92172642900691715 /* AppConfiguration.framework in Frameworks */,
 				CE7B78C2217269E100691715 /* Crashlytics.framework in Frameworks */,
 				CE7B78C1217269E100691715 /* Fabric.framework in Frameworks */,
+				CE7B78E021726BB600691715 /* AppAnalytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +107,7 @@
 				CE7B7874217255AC00691715 /* Resources */,
 				CE7B78B72172667E00691715 /* Services */,
 				CE7B7877217255C100691715 /* Support Files */,
+				CE7B78E821726EE300691715 /* Values */,
 				CE7B7875217255B600691715 /* View Controllers */,
 			);
 			path = Seater;
@@ -127,9 +135,9 @@
 			isa = PBXGroup;
 			children = (
 				CE7B78622172556B00691715 /* AppDelegate.swift */,
+				CE7B78BC217266C900691715 /* AppFactory.swift */,
 				CE7B78B42172650700691715 /* AppLogger.swift */,
 				CE7B78B82172668C00691715 /* AppServices.swift */,
-				CE7B78BC217266C900691715 /* AppFactory.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -155,6 +163,7 @@
 		CE7B78AC2172643D00691715 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE7B78DF21726BB600691715 /* AppAnalytics.framework */,
 				CE7B78A82172642900691715 /* AppConfiguration.framework */,
 				CE7B78C0217269E100691715 /* Crashlytics.framework */,
 				CE7B78BF217269E100691715 /* Fabric.framework */,
@@ -177,6 +186,14 @@
 				CE7B78C421726A1700691715 /* CrashlyticsService.swift */,
 			);
 			path = "External Services";
+			sourceTree = "<group>";
+		};
+		CE7B78E821726EE300691715 /* Values */ = {
+			isa = PBXGroup;
+			children = (
+				CE7B78E921726EF400691715 /* SeaterAnalyticEvent.swift */,
+			);
+			path = Values;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE7B78BD217266C900691715 /* AppFactory.swift in Sources */,
+				CE7B78EA21726EF400691715 /* SeaterAnalyticEvent.swift in Sources */,
 				CE7B78B52172650700691715 /* AppLogger.swift in Sources */,
 				CE7B78C521726A1700691715 /* CrashlyticsService.swift in Sources */,
 				CE7B78B92172668C00691715 /* AppServices.swift in Sources */,

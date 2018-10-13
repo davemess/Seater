@@ -8,6 +8,7 @@
 
 import UIKit
 import AppConfiguration
+import AppAnalytics
 import os.log
 
 @UIApplicationMain
@@ -42,7 +43,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Initialize services
         initializeLaunchServices(appFactory.launchServices, launchOptions: launchOptions)
+        initializeAnalytics()
         
+        AnalyticsManager.shared.log(SeaterAnalyticEvent.appLaunch.toAnalyticEvent())
         os_log("didFinishLaunchingWithOptions with configuration %{public}@ and launchOptions: %{public}@", log: log, type: .info, buildConfiguration.description, launchOptions ?? "[]")
         
         return true
@@ -56,4 +59,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+    private func initializeAnalytics() {
+        let recorder = appFactory.analyticsRecorder
+        AnalyticsManager.shared.register(recorder)
+    }
 }

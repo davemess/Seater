@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AppAnalytics
 
 /// Core factory for producing components necessary for app launch and run.
 class AppFactory {
@@ -23,6 +24,11 @@ class AppFactory {
         return launchServices as! [LaunchService]
         // swiftlint:enable force_cast
     }
+    
+    lazy var analyticsRecorder: AnalyticsRecorder = {
+        let service = self.appServices.analyticsService
+        return service.analyticsRecorder()
+    }()
     
     // MARK: - lifecyle
     
