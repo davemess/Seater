@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SeaterKit
 
 /// Navigation coordinator Events display.
 class EventsCoordinator: NavigationCoordinator {
@@ -32,7 +33,7 @@ class EventsCoordinator: NavigationCoordinator {
 
 extension EventsCoordinator: EventListViewControllerDelegate {
     
-    func viewController(_ viewController: EventListViewController, didSelect event: AnyObject) {
+    func viewController(_ viewController: EventListViewController, didSelect event: Event) {
         // TODO: push detail view
     }
 }

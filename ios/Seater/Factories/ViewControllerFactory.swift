@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SeaterKit
 
 /// Factory for creating view controllers. Use this to inject dependencies.
 class ViewControllerFactory {
@@ -15,12 +16,18 @@ class ViewControllerFactory {
         case eventList(delegate: EventListViewControllerDelegate?)
     }
     
+    // MARK: - private properties
+    
+    private lazy var eventManager: EventManager = {
+        return SeaterKit.shared.eventManager
+    }()
+    
     // MARK: - public
     
     func viewController(for type: ViewControllerType) -> UIViewController {
         switch type {
         case .eventList(let delegate):
-            let viewController = EventListViewController()
+            let viewController = EventListViewController(eventManager: eventManager)
             viewController.delegate = delegate
             return viewController
         }

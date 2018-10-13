@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SeaterKit
 import AppConfiguration
 import AppAnalytics
 import AppTheme
@@ -54,6 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         initializeLaunchServices(appFactory.launchServices, launchOptions: launchOptions)
         initializeAnalytics()
         initializeApplicationTheme()
+        initializeSeaterKit()
         
         presentKeyWindow(false)
         
@@ -79,6 +81,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func initializeApplicationTheme() {
         let theme = appFactory.applicationTheme
         AppearanceThemeManager.theme = theme
+    }
+    
+    private func initializeSeaterKit() {
+        SeaterKit.initialize()
     }
     
     private func presentKeyWindow(_ animated: Bool = false) {
