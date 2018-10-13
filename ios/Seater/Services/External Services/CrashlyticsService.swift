@@ -13,13 +13,15 @@ import Fabric
 import Crashlytics
 
 /// Enacapsulates configuration of a Crashlytics service.
-class CrashlyticsService: LaunchService {
+final class CrashlyticsService: LaunchService {
     
     // MARK: - lifecycle
     
     init(_ deployment: Deployment) {
         switch deployment {
-        case .development, .staging, .production:
+        case .development, .staging:
+            Fabric.sharedSDK().debug = true
+        case .production:
             Fabric.sharedSDK().debug = false
         }
     }

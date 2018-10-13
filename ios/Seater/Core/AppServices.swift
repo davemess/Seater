@@ -10,19 +10,16 @@ import Foundation
 import AppConfiguration
 
 /// Core class for providing and configuring external services.
-class AppServices {
+class AppServices: AppServiceProvider {
     
     // MARK: - public properties
     
-    var services: [Service] {
-        // Add third-party services which are required for application lifecycle
-        return [
-           analyticsService
-        ]
-    }
-    
     lazy var analyticsService: AnalyticsService = {
         return CrashlyticsService(deployment)
+    }()
+    
+    lazy var themeProvider: ThemeProviderService = {
+        return StandardThemeProvider(deployment)
     }()
     
     // MARK: - private properties

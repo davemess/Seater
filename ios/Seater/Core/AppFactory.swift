@@ -8,32 +8,41 @@
 
 import UIKit
 import AppAnalytics
+import AppTheme
 
 /// Core factory for producing components necessary for app launch and run.
 class AppFactory {
 
     // MARK: - private properties
     
-    private let appServices: AppServices
+    private let appServiceProvider: AppServiceProvider
     
     // MARK: - public properties
     
     var launchServices: [LaunchService] {
-        // swiftlint:disable force_cast
-        let launchServices = appServices.services.filter { $0 is LaunchService }
-        return launchServices as! [LaunchService]
-        // swiftlint:enable force_cast
+        var launchServices: [LaunchService] = []
+        for service in appServiceProvider.services {
+            if let launchService = service as? LaunchService {
+                launchServices.append(launchService)
+            }
+        }
+        return launchServices
     }
     
     lazy var analyticsRecorder: AnalyticsRecorder = {
-        let service = self.appServices.analyticsService
+        let service = self.appServiceProvider.analyticsService
         return service.analyticsRecorder()
+    }()
+    
+    lazy var applicationTheme: AppearanceTheme = {
+        let service = self.appServiceProvider.themeProvider
+        return service.theme
     }()
     
     // MARK: - lifecyle
     
-    init(_ appServices: AppServices) {
-        self.appServices = appServices
+    init(_ appServiceProvider: AppServiceProvider) {
+        self.appServiceProvider = appServiceProvider
     }
     
     // MARK: - public funcs

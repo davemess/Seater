@@ -18,7 +18,7 @@
 		CE7B78AA2172642900691715 /* AppConfiguration.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE7B78A82172642900691715 /* AppConfiguration.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE7B78B52172650700691715 /* AppLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B78B42172650700691715 /* AppLogger.swift */; };
 		CE7B78B92172668C00691715 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B78B82172668C00691715 /* AppServices.swift */; };
-		CE7B78BB2172669F00691715 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B78BA2172669F00691715 /* Service.swift */; };
+		CE7B78BB2172669F00691715 /* AppService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B78BA2172669F00691715 /* AppService.swift */; };
 		CE7B78BD217266C900691715 /* AppFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B78BC217266C900691715 /* AppFactory.swift */; };
 		CE7B78C1217269E100691715 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7B78BF217269E100691715 /* Fabric.framework */; };
 		CE7B78C2217269E100691715 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7B78C0217269E100691715 /* Crashlytics.framework */; };
@@ -31,6 +31,11 @@
 		CE7B78F22172746D00691715 /* NavigationCoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B78F12172746D00691715 /* NavigationCoordinatorFactory.swift */; };
 		CE7B78F42172751B00691715 /* EventsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B78F32172751B00691715 /* EventsCoordinator.swift */; };
 		CE7B78F62172778B00691715 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7B78F52172778B00691715 /* ViewController.xib */; };
+		CE7B7905217277E300691715 /* AppTheme.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7B7904217277E300691715 /* AppTheme.framework */; };
+		CE7B7906217277E300691715 /* AppTheme.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE7B7904217277E300691715 /* AppTheme.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CE7B790F2172795E00691715 /* ThemeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B790E2172795E00691715 /* ThemeProvider.swift */; };
+		CE7B791121727E6D00691715 /* AppServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B791021727E6D00691715 /* AppServiceProvider.swift */; };
+		CE7B791421727F7300691715 /* StandardTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B791321727F7300691715 /* StandardTheme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +45,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				CE7B7906217277E300691715 /* AppTheme.framework in Embed Frameworks */,
 				CE7B78AA2172642900691715 /* AppConfiguration.framework in Embed Frameworks */,
 				CE7B78E121726BB600691715 /* AppAnalytics.framework in Embed Frameworks */,
 			);
@@ -61,10 +67,10 @@
 		CE7B78A82172642900691715 /* AppConfiguration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AppConfiguration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7B78B42172650700691715 /* AppLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogger.swift; sourceTree = "<group>"; };
 		CE7B78B82172668C00691715 /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
-		CE7B78BA2172669F00691715 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		CE7B78BA2172669F00691715 /* AppService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppService.swift; sourceTree = "<group>"; };
 		CE7B78BC217266C900691715 /* AppFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFactory.swift; sourceTree = "<group>"; };
-		CE7B78BF217269E100691715 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
-		CE7B78C0217269E100691715 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		CE7B78BF217269E100691715 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = Frameworks/Fabric.framework; sourceTree = "<group>"; };
+		CE7B78C0217269E100691715 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Frameworks/Crashlytics.framework; sourceTree = "<group>"; };
 		CE7B78C421726A1700691715 /* CrashlyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashlyticsService.swift; sourceTree = "<group>"; };
 		CE7B78DF21726BB600691715 /* AppAnalytics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AppAnalytics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7B78E921726EF400691715 /* SeaterAnalyticEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaterAnalyticEvent.swift; sourceTree = "<group>"; };
@@ -73,6 +79,10 @@
 		CE7B78F12172746D00691715 /* NavigationCoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCoordinatorFactory.swift; sourceTree = "<group>"; };
 		CE7B78F32172751B00691715 /* EventsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsCoordinator.swift; sourceTree = "<group>"; };
 		CE7B78F52172778B00691715 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		CE7B7904217277E300691715 /* AppTheme.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AppTheme.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE7B790E2172795E00691715 /* ThemeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeProvider.swift; sourceTree = "<group>"; };
+		CE7B791021727E6D00691715 /* AppServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServiceProvider.swift; sourceTree = "<group>"; };
+		CE7B791321727F7300691715 /* StandardTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardTheme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +91,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE7B78A92172642900691715 /* AppConfiguration.framework in Frameworks */,
+				CE7B7905217277E300691715 /* AppTheme.framework in Frameworks */,
 				CE7B78C2217269E100691715 /* Crashlytics.framework in Frameworks */,
 				CE7B78C1217269E100691715 /* Fabric.framework in Frameworks */,
 				CE7B78E021726BB600691715 /* AppAnalytics.framework in Frameworks */,
@@ -128,6 +139,7 @@
 			children = (
 				CE7B78692172556D00691715 /* Assets.xcassets */,
 				CE7B786B2172556D00691715 /* LaunchScreen.storyboard */,
+				CE7B791221727F6900691715 /* Themes */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -175,6 +187,7 @@
 			children = (
 				CE7B78DF21726BB600691715 /* AppAnalytics.framework */,
 				CE7B78A82172642900691715 /* AppConfiguration.framework */,
+				CE7B7904217277E300691715 /* AppTheme.framework */,
 				CE7B78C0217269E100691715 /* Crashlytics.framework */,
 				CE7B78BF217269E100691715 /* Fabric.framework */,
 			);
@@ -184,8 +197,10 @@
 		CE7B78B72172667E00691715 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				CE7B78BA2172669F00691715 /* Service.swift */,
+				CE7B78BA2172669F00691715 /* AppService.swift */,
+				CE7B791021727E6D00691715 /* AppServiceProvider.swift */,
 				CE7B78C321726A0900691715 /* External Services */,
+				CE7B790D2172794900691715 /* Private Services */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -222,6 +237,22 @@
 				CE7B78F12172746D00691715 /* NavigationCoordinatorFactory.swift */,
 			);
 			path = Factories;
+			sourceTree = "<group>";
+		};
+		CE7B790D2172794900691715 /* Private Services */ = {
+			isa = PBXGroup;
+			children = (
+				CE7B790E2172795E00691715 /* ThemeProvider.swift */,
+			);
+			path = "Private Services";
+			sourceTree = "<group>";
+		};
+		CE7B791221727F6900691715 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				CE7B791321727F7300691715 /* StandardTheme.swift */,
+			);
+			path = Themes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,7 +362,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run ff6b077200b320d3fbf1dcc639811c7dc98d3085 f1e272d897179e0221e354d7e81d6dafe6a13053f26367cb5427143d3ed60ebe\n";
+			shellScript = "./Frameworks/Fabric.framework/run ff6b077200b320d3fbf1dcc639811c7dc98d3085 f1e272d897179e0221e354d7e81d6dafe6a13053f26367cb5427143d3ed60ebe\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -348,9 +379,12 @@
 				CE7B78B92172668C00691715 /* AppServices.swift in Sources */,
 				CE7B78ED2172719700691715 /* NavigationCoordinator.swift in Sources */,
 				CE7B78EF2172733A00691715 /* AppCoordinator.swift in Sources */,
-				CE7B78BB2172669F00691715 /* Service.swift in Sources */,
+				CE7B791421727F7300691715 /* StandardTheme.swift in Sources */,
+				CE7B791121727E6D00691715 /* AppServiceProvider.swift in Sources */,
+				CE7B78BB2172669F00691715 /* AppService.swift in Sources */,
 				CE7B78F22172746D00691715 /* NavigationCoordinatorFactory.swift in Sources */,
 				CE7B78652172556B00691715 /* ViewController.swift in Sources */,
+				CE7B790F2172795E00691715 /* ThemeProvider.swift in Sources */,
 				CE7B78632172556B00691715 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -496,7 +530,7 @@
 				DEVELOPMENT_TEAM = F3DZMTG4N6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Seater/Support Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
@@ -520,7 +554,7 @@
 				DEVELOPMENT_TEAM = F3DZMTG4N6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Seater/Support Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
