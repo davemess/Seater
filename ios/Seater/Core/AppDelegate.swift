@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // View heirarchy
     var window: UIWindow?
-    private let rootController: UINavigationController = UINavigationController()
     private var rootCoordinator: NavigationCoordinator
     
     // Util
@@ -38,7 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // View heirarchy
         let screenFrame = UIScreen.main.bounds
         self.window = UIWindow(frame: screenFrame)
-        self.window?.rootViewController = self.rootController
+        
+        let rootController: UINavigationController = UINavigationController()
         self.rootCoordinator = self.appFactory.rootCoordinator(with: rootController)
         
         super.init()
@@ -82,6 +82,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func presentKeyWindow(_ animated: Bool = false) {
+        window?.rootViewController = rootCoordinator.navigationController
         window?.makeKeyAndVisible()
         rootCoordinator.start(animated)
     }
