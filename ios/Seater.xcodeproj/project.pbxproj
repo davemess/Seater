@@ -18,6 +18,9 @@
 		CE7B78A92172642900691715 /* AppConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7B78A82172642900691715 /* AppConfiguration.framework */; };
 		CE7B78AA2172642900691715 /* AppConfiguration.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE7B78A82172642900691715 /* AppConfiguration.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE7B78B52172650700691715 /* AppLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B78B42172650700691715 /* AppLogger.swift */; };
+		CE7B78B92172668C00691715 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B78B82172668C00691715 /* AppServices.swift */; };
+		CE7B78BB2172669F00691715 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B78BA2172669F00691715 /* Service.swift */; };
+		CE7B78BD217266C900691715 /* AppFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B78BC217266C900691715 /* AppFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,6 +50,9 @@
 		CE7B787B2172570F00691715 /* Base.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Base.xcconfig; sourceTree = "<group>"; };
 		CE7B78A82172642900691715 /* AppConfiguration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AppConfiguration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7B78B42172650700691715 /* AppLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogger.swift; sourceTree = "<group>"; };
+		CE7B78B82172668C00691715 /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
+		CE7B78BA2172669F00691715 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		CE7B78BC217266C900691715 /* AppFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +90,7 @@
 			children = (
 				CE7B7876217255BC00691715 /* Core */,
 				CE7B7874217255AC00691715 /* Resources */,
+				CE7B78B72172667E00691715 /* Services */,
 				CE7B7877217255C100691715 /* Support Files */,
 				CE7B7875217255B600691715 /* View Controllers */,
 			);
@@ -113,6 +120,8 @@
 			children = (
 				CE7B78622172556B00691715 /* AppDelegate.swift */,
 				CE7B78B42172650700691715 /* AppLogger.swift */,
+				CE7B78B82172668C00691715 /* AppServices.swift */,
+				CE7B78BC217266C900691715 /* AppFactory.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -141,6 +150,14 @@
 				CE7B78A82172642900691715 /* AppConfiguration.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE7B78B72172667E00691715 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CE7B78BA2172669F00691715 /* Service.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,7 +257,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE7B78BD217266C900691715 /* AppFactory.swift in Sources */,
 				CE7B78B52172650700691715 /* AppLogger.swift in Sources */,
+				CE7B78B92172668C00691715 /* AppServices.swift in Sources */,
+				CE7B78BB2172669F00691715 /* Service.swift in Sources */,
 				CE7B78652172556B00691715 /* ViewController.swift in Sources */,
 				CE7B78632172556B00691715 /* AppDelegate.swift in Sources */,
 			);
