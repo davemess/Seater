@@ -7,4 +7,7 @@
    <FileRef
       location = "group:Seater.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:SeaterAppKit/SeaterAppKit.xcodeproj">
+   </FileRef>
 </Workspace>

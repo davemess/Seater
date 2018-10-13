@@ -15,7 +15,24 @@
 		CE7B787C2172570F00691715 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = CE7B78792172570F00691715 /* Debug.xcconfig */; };
 		CE7B787D2172570F00691715 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = CE7B787A2172570F00691715 /* Release.xcconfig */; };
 		CE7B787E2172570F00691715 /* Base.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = CE7B787B2172570F00691715 /* Base.xcconfig */; };
+		CE7B78A92172642900691715 /* AppConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7B78A82172642900691715 /* AppConfiguration.framework */; };
+		CE7B78AA2172642900691715 /* AppConfiguration.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE7B78A82172642900691715 /* AppConfiguration.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CE7B78B52172650700691715 /* AppLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B78B42172650700691715 /* AppLogger.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CE7B78AB2172642900691715 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CE7B78AA2172642900691715 /* AppConfiguration.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CE7B785F2172556B00691715 /* Seater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Seater.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,6 +45,8 @@
 		CE7B78792172570F00691715 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		CE7B787A2172570F00691715 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		CE7B787B2172570F00691715 /* Base.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Base.xcconfig; sourceTree = "<group>"; };
+		CE7B78A82172642900691715 /* AppConfiguration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AppConfiguration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE7B78B42172650700691715 /* AppLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE7B78A92172642900691715 /* AppConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +66,7 @@
 			children = (
 				CE7B78612172556B00691715 /* Seater */,
 				CE7B78782172570F00691715 /* Configurations */,
+				CE7B78AC2172643D00691715 /* Frameworks */,
 				CE7B78602172556B00691715 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				CE7B78622172556B00691715 /* AppDelegate.swift */,
+				CE7B78B42172650700691715 /* AppLogger.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -113,6 +135,14 @@
 			path = Configurations;
 			sourceTree = "<group>";
 		};
+		CE7B78AC2172643D00691715 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE7B78A82172642900691715 /* AppConfiguration.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -124,6 +154,7 @@
 				CE7B785C2172556B00691715 /* Frameworks */,
 				CE7B785D2172556B00691715 /* Resources */,
 				CE7B787F21725C8200691715 /* SwiftLint */,
+				CE7B78AB2172642900691715 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -209,6 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE7B78B52172650700691715 /* AppLogger.swift in Sources */,
 				CE7B78652172556B00691715 /* ViewController.swift in Sources */,
 				CE7B78632172556B00691715 /* AppDelegate.swift in Sources */,
 			);
@@ -362,6 +394,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F3DZMTG4N6;
 				INFOPLIST_FILE = "$(SRCROOT)/Seater/Support Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -381,6 +414,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F3DZMTG4N6;
 				INFOPLIST_FILE = "$(SRCROOT)/Seater/Support Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

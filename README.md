@@ -10,8 +10,8 @@ A sample app demonstrating usage of the SeatGeek api.
 ```
 
 ## Requirements
-* Xcode 10.1
-* iOS 12
+* Xcode 10.1 (beta 2)
+* iOS 12.1
 * Swift 4.2 
 <!--* Carthage (current version `0.18-19-g743fa0f`)-->
 <!--* Fastlane (current version is `2.105.1`)-->
