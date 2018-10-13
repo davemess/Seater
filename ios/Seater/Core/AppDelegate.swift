@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // View heirarchy
     var window: UIWindow?
+    private let rootNavigationController = UINavigationController()
     
     // Util
     private let log = AppLogger.log(.core)

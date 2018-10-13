@@ -15,8 +15,12 @@ class AppServices {
     // MARK: - properties
     
     lazy var services: [Service] = {
+        let deployment = self.buildConfiguration.deployment
+        
         // Add third-party services which are required for application lifecycle
-        return []
+        return [
+            CrashlyticsService(deployment)
+        ]
     }()
     
     private var buildConfiguration: BuildConfiguration

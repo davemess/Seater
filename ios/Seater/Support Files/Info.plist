@@ -24,6 +24,20 @@
 	<string>${CONFIGURATION}</string>
 	<key>Deployment</key>
 	<string>${DEPLOYMENT}</string>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>ff6b077200b320d3fbf1dcc639811c7dc98d3085</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict/>
+				<key>KitName</key>
+				<string>Crashlytics</string>
+			</dict>
+		</array>
+	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSHumanReadableCopyright</key>
