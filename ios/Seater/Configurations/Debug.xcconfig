@@ -1,0 +1,15 @@
+//
+//  Base.xcconfig
+//  Seater
+//
+//  Created by David Messing on 10/13/18.
+//  Copyright © 2018 davemess. All rights reserved.
+//
+
+#include "Base.xcconfig"
+
+// User Defined
+APP_NAME = Seater-Debug
+PRODUCT_BUNDLE_IDENTIFIER = com.davemess.Seater-debug
+DEPLOYMENT = development
+APP_ICON = AppIcon-Development

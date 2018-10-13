@@ -12,6 +12,9 @@
 		CE7B78682172556B00691715 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE7B78662172556B00691715 /* Main.storyboard */; };
 		CE7B786A2172556D00691715 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE7B78692172556D00691715 /* Assets.xcassets */; };
 		CE7B786D2172556D00691715 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE7B786B2172556D00691715 /* LaunchScreen.storyboard */; };
+		CE7B787C2172570F00691715 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = CE7B78792172570F00691715 /* Debug.xcconfig */; };
+		CE7B787D2172570F00691715 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = CE7B787A2172570F00691715 /* Release.xcconfig */; };
+		CE7B787E2172570F00691715 /* Base.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = CE7B787B2172570F00691715 /* Base.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		CE7B78692172556D00691715 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE7B786C2172556D00691715 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE7B786E2172556D00691715 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE7B78792172570F00691715 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		CE7B787A2172570F00691715 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		CE7B787B2172570F00691715 /* Base.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Base.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +45,7 @@
 			isa = PBXGroup;
 			children = (
 				CE7B78612172556B00691715 /* Seater */,
+				CE7B78782172570F00691715 /* Configurations */,
 				CE7B78602172556B00691715 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,6 +101,16 @@
 				CE7B786E2172556D00691715 /* Info.plist */,
 			);
 			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		CE7B78782172570F00691715 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				CE7B78792172570F00691715 /* Debug.xcconfig */,
+				CE7B787A2172570F00691715 /* Release.xcconfig */,
+				CE7B787B2172570F00691715 /* Base.xcconfig */,
+			);
+			path = Configurations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,9 +171,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE7B787C2172570F00691715 /* Debug.xcconfig in Resources */,
 				CE7B786D2172556D00691715 /* LaunchScreen.storyboard in Resources */,
 				CE7B786A2172556D00691715 /* Assets.xcassets in Resources */,
 				CE7B78682172556B00691715 /* Main.storyboard in Resources */,
+				CE7B787D2172570F00691715 /* Release.xcconfig in Resources */,
+				CE7B787E2172570F00691715 /* Base.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +216,7 @@
 /* Begin XCBuildConfiguration section */
 		CE7B786F2172556D00691715 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE7B78792172570F00691715 /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -257,6 +278,7 @@
 		};
 		CE7B78702172556D00691715 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE7B787A2172570F00691715 /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -312,8 +334,9 @@
 		};
 		CE7B78722172556D00691715 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE7B78792172570F00691715 /* Debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F3DZMTG4N6;
 				INFOPLIST_FILE = "$(SRCROOT)/Seater/Support Files/Info.plist";
@@ -321,7 +344,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.davemess.Seater;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -330,8 +353,9 @@
 		};
 		CE7B78732172556D00691715 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE7B787A2172570F00691715 /* Release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F3DZMTG4N6;
 				INFOPLIST_FILE = "$(SRCROOT)/Seater/Support Files/Info.plist";
@@ -339,7 +363,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.davemess.Seater;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

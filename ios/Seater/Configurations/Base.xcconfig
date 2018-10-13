@@ -1,0 +1,16 @@
+//
+//  Base.xcconfig
+//  Seater
+//
+//  Created by David Messing on 10/13/18.
+//  Copyright © 2018 davemess. All rights reserved.
+//
+
+// User Defined
+APP_BUNDLE_VERSION = 1
+APP_NAME = Seater
+APP_VERSION = 0.0.1
+PRODUCT_BUNDLE_IDENTIFIER = com.davemess.Seater
+COPYRIGHT_STATEMENT = "Copyright @2018 David Messing, All Rights Reserved"
+DEPLOYMENT = production
+APP_ICON = AppIcon
