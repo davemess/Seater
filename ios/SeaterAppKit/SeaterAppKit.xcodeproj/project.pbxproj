@@ -34,6 +34,11 @@
 		CEE163B921738AF00042E99C /* RemoteServiceReplyHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE163B821738AF00042E99C /* RemoteServiceReplyHandler.swift */; };
 		CEE163BB21738B5E0042E99C /* RemoteServiceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE163BA21738B5E0042E99C /* RemoteServiceResponse.swift */; };
 		CEE163D62173D2F50042E99C /* NetworkIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE163D52173D2F50042E99C /* NetworkIndicatorManager.swift */; };
+		CEE163E42173F13D0042E99C /* Cache.h in Headers */ = {isa = PBXBuildFile; fileRef = CEE163E22173F13D0042E99C /* Cache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CEE163EB2173F17C0042E99C /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE163EA2173F17C0042E99C /* Storage.swift */; };
+		CEE163ED2173F19B0042E99C /* MemoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE163EC2173F19B0042E99C /* MemoryCache.swift */; };
+		CEE163EF2173F24A0042E99C /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE163EE2173F24A0042E99C /* Cache.swift */; };
+		CEE163F32173F49B0042E99C /* DiskCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE163F22173F49B0042E99C /* DiskCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +80,13 @@
 		CEE163B821738AF00042E99C /* RemoteServiceReplyHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteServiceReplyHandler.swift; sourceTree = "<group>"; };
 		CEE163BA21738B5E0042E99C /* RemoteServiceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteServiceResponse.swift; sourceTree = "<group>"; };
 		CEE163D52173D2F50042E99C /* NetworkIndicatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkIndicatorManager.swift; sourceTree = "<group>"; };
+		CEE163E02173F13D0042E99C /* Cache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEE163E22173F13D0042E99C /* Cache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cache.h; sourceTree = "<group>"; };
+		CEE163E32173F13D0042E99C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEE163EA2173F17C0042E99C /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		CEE163EC2173F19B0042E99C /* MemoryCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryCache.swift; sourceTree = "<group>"; };
+		CEE163EE2173F24A0042E99C /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		CEE163F22173F49B0042E99C /* DiskCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +133,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CEE163DD2173F13D0042E99C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -131,10 +150,11 @@
 				CE7B78A02172640400691715 /* AppConfiguration */,
 				CE7B78FD217277DB00691715 /* AppTheme */,
 				CEE16341217295700042E99C /* AppUI */,
+				CEE163E12173F13D0042E99C /* Cache */,
 				CEE163632172A17C0042E99C /* RemoteServices */,
 				CEE163772172A27C0042E99C /* Results */,
-				CE7B789F2172640400691715 /* Products */,
 				CEE163B02173653F0042E99C /* Frameworks */,
+				CE7B789F2172640400691715 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,6 +167,7 @@
 				CEE16340217295700042E99C /* AppUI.framework */,
 				CEE163622172A17C0042E99C /* RemoteServices.framework */,
 				CEE163762172A27C0042E99C /* Results.framework */,
+				CEE163E02173F13D0042E99C /* Cache.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -360,6 +381,43 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		CEE163E12173F13D0042E99C /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				CEE163E92173F15C0042E99C /* Public */,
+				CEE163F42173F49F0042E99C /* Private */,
+				CEE163E82173F1550042E99C /* Support Files */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		CEE163E82173F1550042E99C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				CEE163E22173F13D0042E99C /* Cache.h */,
+				CEE163E32173F13D0042E99C /* Info.plist */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		CEE163E92173F15C0042E99C /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				CEE163EE2173F24A0042E99C /* Cache.swift */,
+				CEE163EA2173F17C0042E99C /* Storage.swift */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
+		CEE163F42173F49F0042E99C /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				CEE163F22173F49B0042E99C /* DiskCache.swift */,
+				CEE163EC2173F19B0042E99C /* MemoryCache.swift */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -408,6 +466,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEE1637A2172A27C0042E99C /* Results.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEE163DB2173F13D0042E99C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEE163E42173F13D0042E99C /* Cache.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,6 +588,24 @@
 			productReference = CEE163762172A27C0042E99C /* Results.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		CEE163DF2173F13D0042E99C /* Cache */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEE163E72173F13D0042E99C /* Build configuration list for PBXNativeTarget "Cache" */;
+			buildPhases = (
+				CEE163DB2173F13D0042E99C /* Headers */,
+				CEE163DC2173F13D0042E99C /* Sources */,
+				CEE163DD2173F13D0042E99C /* Frameworks */,
+				CEE163DE2173F13D0042E99C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Cache;
+			productName = Cache;
+			productReference = CEE163E02173F13D0042E99C /* Cache.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -553,6 +637,10 @@
 					CEE163752172A27C0042E99C = {
 						CreatedOnToolsVersion = 10.1;
 					};
+					CEE163DF2173F13D0042E99C = {
+						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
+					};
 				};
 			};
 			buildConfigurationList = CE7B7896217263EC00691715 /* Build configuration list for PBXProject "SeaterAppKit" */;
@@ -571,6 +659,7 @@
 				CE7B789D2172640400691715 /* AppConfiguration */,
 				CE7B78FB217277DB00691715 /* AppTheme */,
 				CEE1633F217295700042E99C /* AppUI */,
+				CEE163DF2173F13D0042E99C /* Cache */,
 				CEE163612172A17C0042E99C /* RemoteServices */,
 				CEE163752172A27C0042E99C /* Results */,
 			);
@@ -614,6 +703,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		CEE163742172A27C0042E99C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEE163DE2173F13D0042E99C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -682,6 +778,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEE163812172A2A10042E99C /* Result.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEE163DC2173F13D0042E99C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEE163EB2173F17C0042E99C /* Storage.swift in Sources */,
+				CEE163F32173F49B0042E99C /* DiskCache.swift in Sources */,
+				CEE163EF2173F24A0042E99C /* Cache.swift in Sources */,
+				CEE163ED2173F19B0042E99C /* MemoryCache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1656,6 +1763,166 @@
 			};
 			name = Release;
 		};
+		CEE163E52173F13D0042E99C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = F3DZMTG4N6;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Cache/Support Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davemess.Cache;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CEE163E62173F13D0042E99C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = F3DZMTG4N6;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Cache/Support Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davemess.Cache;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1718,6 +1985,15 @@
 			buildConfigurations = (
 				CEE1637C2172A27C0042E99C /* Debug */,
 				CEE1637D2172A27C0042E99C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEE163E72173F13D0042E99C /* Build configuration list for PBXNativeTarget "Cache" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEE163E52173F13D0042E99C /* Debug */,
+				CEE163E62173F13D0042E99C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

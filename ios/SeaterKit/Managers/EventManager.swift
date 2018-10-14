@@ -8,6 +8,7 @@
 
 import Foundation
 import Results
+import Cache
 import os.log
 
 /// Manages Event operations.
@@ -16,12 +17,14 @@ public class EventManager {
     // MARK: - private properties
     
     private let eventsService: EventsService
+    private let storage: Storage<NSString, Event>
     private let log = SeaterKitLogger.log(.eventManager)
 
     // MARK: - lifecycle
 
-    init(eventsService: EventsService) {
+    init(eventsService: EventsService, storage: Storage<NSString, Event>) {
         self.eventsService = eventsService
+        self.storage = storage
     }
     
     // MARK: - public funcs
@@ -35,7 +38,10 @@ public class EventManager {
         eventsService.find(query: query) { (result) in
             switch result {
             case .success(let baseEvents):
-                let events = baseEvents.map { return Event(event: $0) }
+                let events = baseEvents.map { baseEvent -> Event in
+                    let favorited = self.isFavorite(event: baseEvent)
+                    return Event(event: baseEvent, favorited: favorited)
+                }
                 handler(.success(events))
             case .failure(let error):
                 os_log("did receive error %{public}@", log: self.log, type: .error, error.localizedDescription)
@@ -53,12 +59,33 @@ public class EventManager {
         eventsService.get(eventId: event.identifier) { result in
             switch result {
             case .success(let baseEvent):
-                let reloaded = Event(event: baseEvent)
+                let favorited = self.isFavorite(event: baseEvent)
+                let reloaded = Event(event: baseEvent, favorited: favorited)
                 handler(.success(reloaded))
             case .failure(let error):
                 os_log("did receive error %{public}@", log: self.log, type: .error, error.localizedDescription)
                 handler(.failure(error))
             }
         }
+    }
+    
+    public func toggleFavorite(event: Event, handler: (Event) -> Void) {
+        event.favorited.toggle()
+        
+        let identifier = event.identifier as NSString
+        if event.favorited {
+            storage[identifier] = event
+            handler(event)
+        } else {
+            storage[identifier] = nil
+            handler(event)
+        }
+    }
+    
+    // MARK: - private
+    
+    private func isFavorite(event: EventsServiceEvent) -> Bool {
+        let identifier = event.identifier as NSString
+        return (self.storage[identifier] != nil)
     }
 }

@@ -34,7 +34,7 @@ class EventsCoordinator: NavigationCoordinator {
 extension EventsCoordinator: EventListViewControllerDelegate {
     
     func viewController(_ viewController: EventListViewController, didSelect event: Event) {
-        let type: ViewControllerFactory.ViewControllerType = .eventDetail(event: event)
+        let type: ViewControllerFactory.ViewControllerType = .eventDetail(event: event, delegate: viewController)
         let viewController = viewControllerFactory.viewController(for: type)
         navigationController.pushViewController(viewController, animated: true)
     }
