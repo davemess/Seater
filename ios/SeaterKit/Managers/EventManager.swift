@@ -69,6 +69,14 @@ public class EventManager {
         }
     }
     
+    public func toggleFavorite(event: Event, handler: (Event) -> Void) {
+        event.favorited.toggle()
+        
+        let identifier = event.identifier as NSString
+        storage[identifier] = event
+        handler(event)
+    }
+    
     // MARK: - private
     
     private func isFavorite(event: EventsServiceEvent) -> Bool {

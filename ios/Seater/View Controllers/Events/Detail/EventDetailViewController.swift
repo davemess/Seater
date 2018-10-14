@@ -11,6 +11,11 @@ import SeaterKit
 import AppUI
 import os.log
 
+/// Defines callbacks which may occur in an EventDetailViewController.
+protocol EventDetailViewControllerDelegate: AnyObject {
+    func viewController(_ viewController: EventDetailViewController, didToggleFavorite event: Event)
+}
+
 /// Displays Events in a detail view.
 class EventDetailViewController: UIViewController, ErrorAlertRenderer {
     
@@ -20,10 +25,15 @@ class EventDetailViewController: UIViewController, ErrorAlertRenderer {
     @IBOutlet private weak var dateLabel: UILabel!
     @IBOutlet private weak var locationLabel: UILabel!
 
+    // MARK: - public properties
+    
+    weak var delegate: EventDetailViewControllerDelegate?
+    
     // MARK: - private properties
     
     private let eventManager: EventManager
     private var event: Event
+    private var reloadedEvent: Event?
     private let log = AppLogger.log(.ui)
     
     // MARK: - lifecycle
@@ -44,7 +54,7 @@ class EventDetailViewController: UIViewController, ErrorAlertRenderer {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        reloadView()
+        reloadView(for: event)
         reloadData()
         
         os_log("%{public}@ viewDidLoad", log: log, type: .info, self.description)
@@ -52,12 +62,20 @@ class EventDetailViewController: UIViewController, ErrorAlertRenderer {
     
     // MARK: - view
     
-    private func reloadView() {
-        self.title = self.event.title
+    private func reloadView(for event: Event) {
+        reloadNavigationItem()
         
         //eventImageView.image =
         locationLabel.text = event.location
         dateLabel.text = DateViewFormatter.format(event.date, style: .long)
+    }
+    
+    private func reloadNavigationItem() {
+        self.title = self.event.title
+        
+        let action: EventAction = event.favorited ? .unfavorite(event) : .favorite(event)
+        let barButtonItem = action.barButtonItem(target: self, action: #selector(toggleFavorite))
+        navigationItem.rightBarButtonItem = barButtonItem
     }
     
     // MARK: - data
@@ -70,12 +88,22 @@ class EventDetailViewController: UIViewController, ErrorAlertRenderer {
             switch result {
             case .success(let item):
                 os_log("%{public}@ did reload item with identifier %@", log: self.log, type: .info, self, item.identifier)
-                self.event = item
-                self.reloadView()
+                self.reloadedEvent = item
+                self.reloadView(for: item)
             case .failure(let error):
                 os_log("%{public}@ did receive error %{public}@", log: self.log, type: .error, self, error.localizedDescription)
                 self.present(error)
             }
+        }
+    }
+    
+    // MARK: - actions
+    
+    @objc private func toggleFavorite() {
+        eventManager.toggleFavorite(event: event) { (item) in
+            self.reloadedEvent = item
+            self.reloadView(for: item)
+            self.delegate?.viewController(self, didToggleFavorite: self.event)
         }
     }
 }

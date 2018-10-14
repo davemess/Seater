@@ -19,6 +19,7 @@ class EventListTableViewCell: UITableViewCell, ReusableCell, NibProviding {
     @IBOutlet private weak var locationLabel: UILabel!
     @IBOutlet private weak var dateLabel: UILabel!
     @IBOutlet private weak var eventImageView: UIImageView!
+    @IBOutlet private weak var favoriteImageView: UIImageView!
     
     // MARK: - overrides
     
@@ -35,6 +36,7 @@ class EventListTableViewCell: UITableViewCell, ReusableCell, NibProviding {
         locationLabel.text = nil
         dateLabel.text = nil
         eventImageView.image = nil
+        favoriteImageView.image = nil
     }
     
     // MARK: - public
@@ -43,5 +45,6 @@ class EventListTableViewCell: UITableViewCell, ReusableCell, NibProviding {
         titleLabel.text = event.title
         locationLabel.text = event.location
         dateLabel.text = DateViewFormatter.format(event.date, style: .long)
+        favoriteImageView.image = event.favorited ? #imageLiteral(resourceName: "heart_filled") : #imageLiteral(resourceName: "heart_outline")
     }
 }

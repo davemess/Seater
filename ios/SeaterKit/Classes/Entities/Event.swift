@@ -16,7 +16,7 @@ public class Event {
     public let location: String
     public let date: Date
     public let imageUrl: String // TODO: convert to URL
-    public let favorited: Bool
+    public var favorited: Bool
     
     public init(identifier: String,
                 title: String,

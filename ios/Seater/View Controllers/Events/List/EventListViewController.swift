@@ -160,3 +160,12 @@ extension EventListViewController: UITableViewDataSourcePrefetching {
         // TODO: preload image data
     }
 }
+
+extension EventListViewController: EventDetailViewControllerDelegate {
+    
+    func viewController(_ viewController: EventDetailViewController, didToggleFavorite event: Event) {
+        if let indexPath = dataSource.indexPath(of: event) {
+            self.tableView.reloadRows(at: [indexPath], with: .automatic)
+        }
+    }
+}

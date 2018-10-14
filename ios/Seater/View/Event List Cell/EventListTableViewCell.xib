@@ -53,18 +53,28 @@
                             </stackView>
                         </subviews>
                     </stackView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7oT-gi-EDB">
+                        <rect key="frame" x="8" y="10" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="Gkh-da-Mml"/>
+                            <constraint firstAttribute="height" constant="30" id="SDI-bF-2fa"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="7oT-gi-EDB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="AFU-wQ-Af5"/>
                     <constraint firstItem="1im-uQ-Q03" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="OD8-FQ-TiN"/>
                     <constraint firstItem="1im-uQ-Q03" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="UN8-hu-vkR"/>
                     <constraint firstItem="1im-uQ-Q03" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="YQF-Nt-aBW"/>
                     <constraint firstAttribute="trailingMargin" secondItem="1im-uQ-Q03" secondAttribute="trailing" id="qeK-EX-Jk2"/>
+                    <constraint firstItem="7oT-gi-EDB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="ueT-b5-cFb"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="dateLabel" destination="tuW-zf-xrK" id="Vao-9F-gyt"/>
                 <outlet property="eventImageView" destination="mwD-p2-4LA" id="sxD-mM-3I7"/>
+                <outlet property="favoriteImageView" destination="7oT-gi-EDB" id="ibo-ia-4FK"/>
                 <outlet property="locationLabel" destination="KEM-dq-8rT" id="tI8-lc-oei"/>
                 <outlet property="titleLabel" destination="Z9u-2S-njt" id="1xi-M0-iNM"/>
             </connections>

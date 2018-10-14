@@ -14,7 +14,7 @@ class ViewControllerFactory {
     
     enum ViewControllerType {
         case eventList(delegate: EventListViewControllerDelegate?)
-        case eventDetail(event: Event)
+        case eventDetail(event: Event, delegate: EventDetailViewControllerDelegate?)
     }
     
     // MARK: - private properties
@@ -33,8 +33,9 @@ class ViewControllerFactory {
             viewController.delegate = delegate
             return viewController
             
-        case .eventDetail(let event):
+        case .eventDetail(let event, let delegate):
             let viewController = EventDetailViewController(eventManager: eventManager, event: event)
+            viewController.delegate = delegate
             return viewController
         }
     }

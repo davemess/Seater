@@ -74,5 +74,20 @@ public extension GenericDataSource {
     func update(with sections: [String], items: [[T]]) {
         load(sections: sections, items: items)
     }
-    
+}
+
+public extension GenericDataSource where T: AnyObject {
+   
+    func indexPath(of item: T) -> IndexPath? {
+        // swiftlint:disable for_where
+        for (section, dataSet) in data.enumerated() {
+            for (row, dataItem) in dataSet.items.enumerated() {
+                if dataItem === item {
+                    return IndexPath(row: row, section: section)
+                }
+            }
+        }
+        
+        return nil
+    }
 }
