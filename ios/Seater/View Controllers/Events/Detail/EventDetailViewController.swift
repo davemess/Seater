@@ -15,6 +15,10 @@ import os.log
 class EventDetailViewController: UIViewController {
     
     // MARK: - outlets
+    
+    @IBOutlet private weak var eventImageView: UIImageView!
+    @IBOutlet private weak var dateLabel: UILabel!
+    @IBOutlet private weak var locationLabel: UILabel!
 
     // MARK: - private properties
     
@@ -40,22 +44,20 @@ class EventDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureViewController()
-        
         reloadView()
         reloadData()
         
         os_log("%{public}@ viewDidLoad", log: log, type: .info, self.description)
     }
     
-    private func configureViewController() {
-        self.title = self.event.title
-    }
-    
     // MARK: - view
     
     private func reloadView() {
-        // TODO: set view outlets
+        self.title = self.event.title
+        
+        //eventImageView.image =
+        locationLabel.text = event.location
+        dateLabel.text = DateViewFormatter.format(event.date, style: .long)
     }
     
     // MARK: - data
