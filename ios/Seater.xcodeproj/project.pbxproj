@@ -63,6 +63,7 @@
 		CEE163C72173BBC00042E99C /* SeaterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE1631421728D6F0042E99C /* SeaterKit.framework */; };
 		CEE163D22173C8CD0042E99C /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE163D02173C8CD0042E99C /* EventDetailViewController.swift */; };
 		CEE163D32173C8CD0042E99C /* EventDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE163D12173C8CD0042E99C /* EventDetailViewController.xib */; };
+		CEE163F12173F3620042E99C /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE163F02173F3620042E99C /* Cache.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,6 +159,7 @@
 		CEE163C52173BA1D0042E99C /* EventsServiceExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsServiceExtensions.swift; sourceTree = "<group>"; };
 		CEE163D02173C8CD0042E99C /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		CEE163D12173C8CD0042E99C /* EventDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventDetailViewController.xib; sourceTree = "<group>"; };
+		CEE163F02173F3620042E99C /* Cache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Cache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEE163F12173F3620042E99C /* Cache.framework in Frameworks */,
 				CEE163832172A2DD0042E99C /* Results.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +289,7 @@
 		CE7B78AC2172643D00691715 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CEE163F02173F3620042E99C /* Cache.framework */,
 				CEE163B2217376BA0042E99C /* RemoteServices.framework */,
 				CEE163842172A2EC0042E99C /* Results.framework */,
 				CEE163822172A2DD0042E99C /* Results.framework */,

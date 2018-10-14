@@ -10,6 +10,7 @@ import Foundation
 import AppConfiguration
 import SeaterKit
 import SeatGeekSDK
+import Cache
 
 /// Core class for providing and configuring external services.
 class AppServices: ServiceProvider, SeaterKitServiceProvider {
@@ -26,6 +27,10 @@ class AppServices: ServiceProvider, SeaterKitServiceProvider {
     
     lazy var eventsService: EventsService = {
         return seatGeek.eventsService
+    }()
+    
+    lazy var storageConfiguration: StorageConfiguration = {
+        return StorageConfiguration.default
     }()
     
     // MARK: - private properties

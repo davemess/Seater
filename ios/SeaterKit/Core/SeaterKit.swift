@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Cache
 import os.log
 
 /// Entry point to the concrete classes of the SeaterKit.
@@ -22,7 +23,8 @@ public class SeaterKit {
     public lazy var eventManager: EventManager = {
         precondition(isInitialized, initAssertion)
         let eventsService = serviceProvider.eventsService
-        let eventManager = EventManager(eventsService: eventsService)
+        let storage: Storage<NSString, Event> = Storage(configuration: serviceProvider.storageConfiguration)
+        let eventManager = EventManager(eventsService: eventsService, storage: storage)
         return eventManager
     }()
     

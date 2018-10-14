@@ -9,7 +9,7 @@
 import Foundation
 
 /// Data structure which represents a Event.
-public struct Event {
+public class Event {
     
     public let identifier: String
     public let title: String
@@ -17,16 +17,30 @@ public struct Event {
     public let date: Date
     public let imageUrl: String // TODO: convert to URL
     public let favorited: Bool
+    
+    public init(identifier: String,
+                title: String,
+                location: String,
+                date: Date,
+                imageUrl: String,
+                favorited: Bool) {
+        self.identifier = identifier
+        self.title = title
+        self.location = location
+        self.date = date
+        self.imageUrl = imageUrl
+        self.favorited = favorited
+    }
 }
 
 extension Event {
     
-    init(event: EventsServiceEvent) {
+    convenience init(event: EventsServiceEvent, favorited: Bool) {
         self.init(identifier: event.identifier,
                   title: event.title,
                   location: event.location,
                   date: event.date,
                   imageUrl: event.imageUrl,
-                  favorited: false) // TODO: implement caching and add favorited status
+                  favorited: favorited)
     }
 }

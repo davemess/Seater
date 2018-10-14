@@ -7,8 +7,10 @@
 //
 
 import Foundation
+import Cache
 
 /// Describes an interface for supplying associated Services.
 public protocol SeaterKitServiceProvider {
     var eventsService: EventsService { get }
+    var storageConfiguration: StorageConfiguration { get }
 }
