@@ -74,9 +74,15 @@ class EventListViewController: UIViewController, ErrorAlertRenderer {
         tableView.registerReusableCell(EventListTableViewCell.self)
         tableView.rowHeight = Configuration.cellHeight
         tableView.decelerationRate = Configuration.decelerationRate
+        
+        // TODO: remove refresh control when search is added
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(reloadData), for: UIControl.Event.valueChanged)
+        tableView.refreshControl = refreshControl
     }
     
     private func reloadView() {
+        tableView.refreshControl?.endRefreshing()
         tableView.reloadData()
     }
     
@@ -89,13 +95,15 @@ class EventListViewController: UIViewController, ErrorAlertRenderer {
     
     // MARK: - data
     
-    private func reloadData() {
-        eventManager.find { (result) in
+    @objc private func reloadData() {
+        eventManager.find(query: "Cow") { (result) in
             switch result {
             case .success(let items):
-                self.dataSource.update(with: [""], items: [items])
+                os_log("%{public}@ did reload %i objects", log: self.log, type: .info, self, items.count)
+                self.dataSource.update(with: ["results"], items: [items])
                 self.reloadView()
-            case .failure(let error): ()
+            case .failure(let error):
+                os_log("%{public}@ did receive error %{public}@", log: self.log, type: .error, self, error.localizedDescription)
                 self.present(error)
             }
         }
@@ -132,6 +140,6 @@ extension EventListViewController: UITableViewDelegate {
 extension EventListViewController: UITableViewDataSourcePrefetching {
     
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-        // TODO
+        // TODO: preload image data
     }
 }

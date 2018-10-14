@@ -12,7 +12,7 @@ import SeaterKit
 import SeatGeekSDK
 
 /// Core class for providing and configuring external services.
-class AppServices: AppServiceProvider, SeaterKitServiceProvider {
+class AppServices: ServiceProvider, SeaterKitServiceProvider {
     
     // MARK: - public properties
     

@@ -1,5 +1,5 @@
 //
-//  AppServiceProvider.swift
+//  ServiceProvider.swift
 //  Seater
 //
 //  Created by David Messing on 10/13/18.
@@ -9,15 +9,15 @@
 import Foundation
 
 /// Describes a type which can supply services.
-protocol AppServiceProvider {
-    var services: [AppService] { get }
+protocol ServiceProvider {
+    var services: [Service] { get }
     var analyticsService: AnalyticsService { get }
     var themeProvider: ThemeProviderService { get }
 }
 
-extension AppServiceProvider {
+extension ServiceProvider {
     
-    var services: [AppService] {
+    var services: [Service] {
         return [
             analyticsService,
             themeProvider

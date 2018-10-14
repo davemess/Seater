@@ -20,7 +20,7 @@ final class CrashlyticsService: LaunchService {
     init(_ deployment: Deployment) {
         switch deployment {
         case .development, .staging:
-            Fabric.sharedSDK().debug = true
+            Fabric.sharedSDK().debug = false
         case .production:
             Fabric.sharedSDK().debug = false
         }

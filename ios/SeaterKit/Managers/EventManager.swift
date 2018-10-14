@@ -8,6 +8,7 @@
 
 import Foundation
 import Results
+import os.log
 
 /// Manages Event operations.
 public class EventManager {
@@ -15,6 +16,7 @@ public class EventManager {
     // MARK: - private properties
     
     private let eventsService: EventsService
+    private let log = SeaterKitLogger.log(.eventManager)
 
     // MARK: - lifecycle
 
@@ -24,8 +26,8 @@ public class EventManager {
     
     // MARK: - public funcs
     
-    public func find(handler: @escaping (Result<[Event]>) -> Void) {
-        eventsService.find(query: "") { (result) in
+    public func find(query: String, handler: @escaping (Result<[Event]>) -> Void) {
+        eventsService.find(query: query) { (result) in
             switch result {
             case .success(let baseEvents):
                 let events = baseEvents.map {
@@ -33,6 +35,7 @@ public class EventManager {
                 }
                 handler(.success(events))
             case .failure(let error):
+                os_log("did receive error %{public}@", log: self.log, type: .error, error.localizedDescription)
                 handler(.failure(error))
             }
         }

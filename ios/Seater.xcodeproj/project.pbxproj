@@ -16,7 +16,7 @@
 		CE7B787E2172570F00691715 /* Base.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = CE7B787B2172570F00691715 /* Base.xcconfig */; };
 		CE7B78B52172650700691715 /* AppLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B78B42172650700691715 /* AppLogger.swift */; };
 		CE7B78B92172668C00691715 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B78B82172668C00691715 /* AppServices.swift */; };
-		CE7B78BB2172669F00691715 /* AppService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B78BA2172669F00691715 /* AppService.swift */; };
+		CE7B78BB2172669F00691715 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B78BA2172669F00691715 /* Service.swift */; };
 		CE7B78BD217266C900691715 /* AppFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B78BC217266C900691715 /* AppFactory.swift */; };
 		CE7B78C1217269E100691715 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7B78BF217269E100691715 /* Fabric.framework */; };
 		CE7B78C2217269E100691715 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7B78C0217269E100691715 /* Crashlytics.framework */; };
@@ -28,7 +28,7 @@
 		CE7B78F42172751B00691715 /* EventsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B78F32172751B00691715 /* EventsCoordinator.swift */; };
 		CE7B78F62172778B00691715 /* EventListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7B78F52172778B00691715 /* EventListViewController.xib */; };
 		CE7B790F2172795E00691715 /* ThemeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B790E2172795E00691715 /* ThemeProvider.swift */; };
-		CE7B791121727E6D00691715 /* AppServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B791021727E6D00691715 /* AppServiceProvider.swift */; };
+		CE7B791121727E6D00691715 /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B791021727E6D00691715 /* ServiceProvider.swift */; };
 		CE7B791421727F7300691715 /* StandardTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B791321727F7300691715 /* StandardTheme.swift */; };
 		CEE1630C217288C20042E99C /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1630B217288C20042E99C /* ViewControllerFactory.swift */; };
 		CEE1631821728D700042E99C /* SeaterKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CEE1631621728D700042E99C /* SeaterKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -56,6 +56,11 @@
 		CEE1639C2172A6590042E99C /* SeatGeekSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1639B2172A6590042E99C /* SeatGeekSDK.swift */; };
 		CEE163A02172A7D00042E99C /* SeatGeekEventsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1639F2172A7D00042E99C /* SeatGeekEventsService.swift */; };
 		CEE163A22172A9170042E99C /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE163A12172A9170042E99C /* Keys.swift */; };
+		CEE163B3217376BA0042E99C /* RemoteServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE163B2217376BA0042E99C /* RemoteServices.framework */; };
+		CEE163B5217383940042E99C /* SeatGeekOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE163B4217383940042E99C /* SeatGeekOperation.swift */; };
+		CEE163C42173B3030042E99C /* SeatGeekResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE163C32173B3030042E99C /* SeatGeekResponse.swift */; };
+		CEE163C62173BA1D0042E99C /* EventsServiceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE163C52173BA1D0042E99C /* EventsServiceExtensions.swift */; };
+		CEE163C72173BBC00042E99C /* SeaterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE1631421728D6F0042E99C /* SeaterKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,7 +108,7 @@
 		CE7B78A82172642900691715 /* AppConfiguration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AppConfiguration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7B78B42172650700691715 /* AppLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogger.swift; sourceTree = "<group>"; };
 		CE7B78B82172668C00691715 /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
-		CE7B78BA2172669F00691715 /* AppService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppService.swift; sourceTree = "<group>"; };
+		CE7B78BA2172669F00691715 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		CE7B78BC217266C900691715 /* AppFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFactory.swift; sourceTree = "<group>"; };
 		CE7B78BF217269E100691715 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = Frameworks/Fabric.framework; sourceTree = "<group>"; };
 		CE7B78C0217269E100691715 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Frameworks/Crashlytics.framework; sourceTree = "<group>"; };
@@ -117,7 +122,7 @@
 		CE7B78F52172778B00691715 /* EventListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventListViewController.xib; sourceTree = "<group>"; };
 		CE7B7904217277E300691715 /* AppTheme.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AppTheme.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7B790E2172795E00691715 /* ThemeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeProvider.swift; sourceTree = "<group>"; };
-		CE7B791021727E6D00691715 /* AppServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServiceProvider.swift; sourceTree = "<group>"; };
+		CE7B791021727E6D00691715 /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
 		CE7B791321727F7300691715 /* StandardTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardTheme.swift; sourceTree = "<group>"; };
 		CEE1630B217288C20042E99C /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		CEE1631421728D6F0042E99C /* SeaterKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SeaterKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +150,10 @@
 		CEE1639B2172A6590042E99C /* SeatGeekSDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatGeekSDK.swift; sourceTree = "<group>"; };
 		CEE1639F2172A7D00042E99C /* SeatGeekEventsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatGeekEventsService.swift; sourceTree = "<group>"; };
 		CEE163A12172A9170042E99C /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		CEE163B2217376BA0042E99C /* RemoteServices.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RemoteServices.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEE163B4217383940042E99C /* SeatGeekOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatGeekOperation.swift; sourceTree = "<group>"; };
+		CEE163C32173B3030042E99C /* SeatGeekResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatGeekResponse.swift; sourceTree = "<group>"; };
+		CEE163C52173BA1D0042E99C /* EventsServiceExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsServiceExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +186,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEE163C72173BBC00042E99C /* SeaterKit.framework in Frameworks */,
+				CEE163B3217376BA0042E99C /* RemoteServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +282,7 @@
 		CE7B78AC2172643D00691715 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CEE163B2217376BA0042E99C /* RemoteServices.framework */,
 				CEE163842172A2EC0042E99C /* Results.framework */,
 				CEE163822172A2DD0042E99C /* Results.framework */,
 				CEE1636A2172A1850042E99C /* RemoteServices.framework */,
@@ -290,8 +302,8 @@
 		CE7B78B72172667E00691715 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				CE7B78BA2172669F00691715 /* AppService.swift */,
-				CE7B791021727E6D00691715 /* AppServiceProvider.swift */,
+				CE7B78BA2172669F00691715 /* Service.swift */,
+				CE7B791021727E6D00691715 /* ServiceProvider.swift */,
 				CE7B78C321726A0900691715 /* External Services */,
 				CE7B790D2172794900691715 /* Private Services */,
 			);
@@ -370,7 +382,10 @@
 		CEE1631521728D700042E99C /* SeaterKit */ = {
 			isa = PBXGroup;
 			children = (
-				CEE1632121728D940042E99C /* Classes */,
+				CEE1632621728DF90042E99C /* Core */,
+				CEE1632D217290170042E99C /* Entities */,
+				CEE1632E217290260042E99C /* Managers */,
+				CEE1636E2172A2190042E99C /* Services */,
 				CEE1632021728D7C0042E99C /* Support Files */,
 			);
 			path = SeaterKit;
@@ -383,17 +398,6 @@
 				CEE1631721728D700042E99C /* Info.plist */,
 			);
 			path = "Support Files";
-			sourceTree = "<group>";
-		};
-		CEE1632121728D940042E99C /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				CEE1632621728DF90042E99C /* Core */,
-				CEE1632D217290170042E99C /* Entities */,
-				CEE1632E217290260042E99C /* Managers */,
-				CEE1636E2172A2190042E99C /* Services */,
-			);
-			path = Classes;
 			sourceTree = "<group>";
 		};
 		CEE1632621728DF90042E99C /* Core */ = {
@@ -410,7 +414,8 @@
 			children = (
 				CEE1632F2172904D0042E99C /* Event.swift */,
 			);
-			path = Entities;
+			name = Entities;
+			path = Classes/Entities;
 			sourceTree = "<group>";
 		};
 		CEE1632E217290260042E99C /* Managers */ = {
@@ -459,7 +464,8 @@
 		CEE1638E2172A6180042E99C /* SeatGeekSDK */ = {
 			isa = PBXGroup;
 			children = (
-				CEE1639A2172A62F0042E99C /* Classes */,
+				CEE1639D2172A65D0042E99C /* Public */,
+				CEE1639E2172A7C00042E99C /* Private */,
 				CEE163992172A6260042E99C /* Support Files */,
 			);
 			path = SeatGeekSDK;
@@ -474,15 +480,6 @@
 			path = "Support Files";
 			sourceTree = "<group>";
 		};
-		CEE1639A2172A62F0042E99C /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				CEE1639D2172A65D0042E99C /* Public */,
-				CEE1639E2172A7C00042E99C /* Private */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
 		CEE1639D2172A65D0042E99C /* Public */ = {
 			isa = PBXGroup;
 			children = (
@@ -495,6 +492,9 @@
 			isa = PBXGroup;
 			children = (
 				CEE1639F2172A7D00042E99C /* SeatGeekEventsService.swift */,
+				CEE163B4217383940042E99C /* SeatGeekOperation.swift */,
+				CEE163C32173B3030042E99C /* SeatGeekResponse.swift */,
+				CEE163C52173BA1D0042E99C /* EventsServiceExtensions.swift */,
 			);
 			path = Private;
 			sourceTree = "<group>";
@@ -708,8 +708,8 @@
 				CE7B78ED2172719700691715 /* NavigationCoordinator.swift in Sources */,
 				CE7B78EF2172733A00691715 /* AppCoordinator.swift in Sources */,
 				CE7B791421727F7300691715 /* StandardTheme.swift in Sources */,
-				CE7B791121727E6D00691715 /* AppServiceProvider.swift in Sources */,
-				CE7B78BB2172669F00691715 /* AppService.swift in Sources */,
+				CE7B791121727E6D00691715 /* ServiceProvider.swift in Sources */,
+				CE7B78BB2172669F00691715 /* Service.swift in Sources */,
 				CE7B78F22172746D00691715 /* NavigationCoordinatorFactory.swift in Sources */,
 				CE7B78652172556B00691715 /* EventListViewController.swift in Sources */,
 				CEE1630C217288C20042E99C /* ViewControllerFactory.swift in Sources */,
@@ -737,7 +737,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEE1639C2172A6590042E99C /* SeatGeekSDK.swift in Sources */,
+				CEE163C42173B3030042E99C /* SeatGeekResponse.swift in Sources */,
+				CEE163C62173BA1D0042E99C /* EventsServiceExtensions.swift in Sources */,
 				CEE163A02172A7D00042E99C /* SeatGeekEventsService.swift in Sources */,
+				CEE163B5217383940042E99C /* SeatGeekOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -938,6 +941,7 @@
 		};
 		CEE1631E21728D700042E99C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE7B78792172570F00691715 /* Debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -971,6 +975,7 @@
 		};
 		CEE1631F21728D700042E99C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE7B787A2172570F00691715 /* Release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -1002,6 +1007,7 @@
 		};
 		CEE163972172A6180042E99C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE7B78792172570F00691715 /* Debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -1035,6 +1041,7 @@
 		};
 		CEE163982172A6180042E99C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE7B787A2172570F00691715 /* Release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;

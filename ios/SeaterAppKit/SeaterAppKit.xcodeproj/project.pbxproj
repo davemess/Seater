@@ -26,6 +26,13 @@
 		CEE163662172A17C0042E99C /* RemoteServices.h in Headers */ = {isa = PBXBuildFile; fileRef = CEE163642172A17C0042E99C /* RemoteServices.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CEE1637A2172A27C0042E99C /* Results.h in Headers */ = {isa = PBXBuildFile; fileRef = CEE163782172A27C0042E99C /* Results.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CEE163812172A2A10042E99C /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE163802172A2A10042E99C /* Result.swift */; };
+		CEE163AB2172E8E90042E99C /* RemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE163AA2172E8E90042E99C /* RemoteService.swift */; };
+		CEE163AD2172E9A50042E99C /* RemoteServiceOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE163AC2172E9A50042E99C /* RemoteServiceOperation.swift */; };
+		CEE163AF2172EB0A0042E99C /* RemoteServiceRequestConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE163AE2172EB0A0042E99C /* RemoteServiceRequestConfiguration.swift */; };
+		CEE163B12173653F0042E99C /* Results.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE163762172A27C0042E99C /* Results.framework */; };
+		CEE163B721738AD30042E99C /* RemoteServicesError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE163B621738AD30042E99C /* RemoteServicesError.swift */; };
+		CEE163B921738AF00042E99C /* RemoteServiceReplyHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE163B821738AF00042E99C /* RemoteServiceReplyHandler.swift */; };
+		CEE163BB21738B5E0042E99C /* RemoteServiceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE163BA21738B5E0042E99C /* RemoteServiceResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +67,12 @@
 		CEE163782172A27C0042E99C /* Results.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Results.h; sourceTree = "<group>"; };
 		CEE163792172A27C0042E99C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEE163802172A2A10042E99C /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		CEE163AA2172E8E90042E99C /* RemoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteService.swift; sourceTree = "<group>"; };
+		CEE163AC2172E9A50042E99C /* RemoteServiceOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteServiceOperation.swift; sourceTree = "<group>"; };
+		CEE163AE2172EB0A0042E99C /* RemoteServiceRequestConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteServiceRequestConfiguration.swift; sourceTree = "<group>"; };
+		CEE163B621738AD30042E99C /* RemoteServicesError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteServicesError.swift; sourceTree = "<group>"; };
+		CEE163B821738AF00042E99C /* RemoteServiceReplyHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteServiceReplyHandler.swift; sourceTree = "<group>"; };
+		CEE163BA21738B5E0042E99C /* RemoteServiceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteServiceResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEE163B12173653F0042E99C /* Results.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +132,7 @@
 				CEE163632172A17C0042E99C /* RemoteServices */,
 				CEE163772172A27C0042E99C /* Results */,
 				CE7B789F2172640400691715 /* Products */,
+				CEE163B02173653F0042E99C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,7 +152,7 @@
 		CE7B78A02172640400691715 /* AppConfiguration */ = {
 			isa = PBXGroup;
 			children = (
-				CE7B78AD2172646500691715 /* Classes */,
+				CE7B78AD2172646500691715 /* Public */,
 				CE7B78A72172640C00691715 /* Support Files */,
 			);
 			path = AppConfiguration;
@@ -152,20 +167,20 @@
 			path = "Support Files";
 			sourceTree = "<group>";
 		};
-		CE7B78AD2172646500691715 /* Classes */ = {
+		CE7B78AD2172646500691715 /* Public */ = {
 			isa = PBXGroup;
 			children = (
 				CE7B78B02172648200691715 /* BuildConfiguration.swift */,
 				CE7B78B22172648B00691715 /* BundleKey.swift */,
 				CE7B78AE2172647800691715 /* Deployment.swift */,
 			);
-			path = Classes;
+			path = Public;
 			sourceTree = "<group>";
 		};
 		CE7B78D821726BAC00691715 /* AppAnalytics */ = {
 			isa = PBXGroup;
 			children = (
-				CE7B78E321726BC600691715 /* Classes */,
+				CE7B78E321726BC600691715 /* Public */,
 				CE7B78E221726BBF00691715 /* Support Files */,
 			);
 			path = AppAnalytics;
@@ -180,19 +195,19 @@
 			path = "Support Files";
 			sourceTree = "<group>";
 		};
-		CE7B78E321726BC600691715 /* Classes */ = {
+		CE7B78E321726BC600691715 /* Public */ = {
 			isa = PBXGroup;
 			children = (
 				CE7B78E421726C0400691715 /* AnalyticsManager.swift */,
 				CE7B78E621726C1000691715 /* AnalyticEvent.swift */,
 			);
-			path = Classes;
+			path = Public;
 			sourceTree = "<group>";
 		};
 		CE7B78FD217277DB00691715 /* AppTheme */ = {
 			isa = PBXGroup;
 			children = (
-				CE7B79082172786400691715 /* Classes */,
+				CE7B79082172786400691715 /* Public */,
 				CE7B79072172785700691715 /* Support Files */,
 			);
 			path = AppTheme;
@@ -207,13 +222,13 @@
 			path = "Support Files";
 			sourceTree = "<group>";
 		};
-		CE7B79082172786400691715 /* Classes */ = {
+		CE7B79082172786400691715 /* Public */ = {
 			isa = PBXGroup;
 			children = (
 				CE7B79092172788D00691715 /* AppearanceTheme.swift */,
 				CE7B790B2172789800691715 /* AppearanceThemeManager.swift */,
 			);
-			path = Classes;
+			path = Public;
 			sourceTree = "<group>";
 		};
 		CEE16341217295700042E99C /* AppUI */ = {
@@ -265,7 +280,8 @@
 		CEE163632172A17C0042E99C /* RemoteServices */ = {
 			isa = PBXGroup;
 			children = (
-				CEE1636D2172A1960042E99C /* Classes */,
+				CEE163BF21738DF80042E99C /* Public */,
+				CEE163BE21738DF10042E99C /* Private */,
 				CEE1636C2172A18A0042E99C /* Support Files */,
 			);
 			path = RemoteServices;
@@ -280,17 +296,10 @@
 			path = "Support Files";
 			sourceTree = "<group>";
 		};
-		CEE1636D2172A1960042E99C /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
 		CEE163772172A27C0042E99C /* Results */ = {
 			isa = PBXGroup;
 			children = (
-				CEE1637F2172A2980042E99C /* Classes */,
+				CEE1637F2172A2980042E99C /* Public */,
 				CEE1637E2172A2890042E99C /* Support Files */,
 			);
 			path = Results;
@@ -305,12 +314,39 @@
 			path = "Support Files";
 			sourceTree = "<group>";
 		};
-		CEE1637F2172A2980042E99C /* Classes */ = {
+		CEE1637F2172A2980042E99C /* Public */ = {
 			isa = PBXGroup;
 			children = (
 				CEE163802172A2A10042E99C /* Result.swift */,
 			);
-			path = Classes;
+			path = Public;
+			sourceTree = "<group>";
+		};
+		CEE163B02173653F0042E99C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CEE163BE21738DF10042E99C /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				CEE163B821738AF00042E99C /* RemoteServiceReplyHandler.swift */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
+		CEE163BF21738DF80042E99C /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				CEE163AA2172E8E90042E99C /* RemoteService.swift */,
+				CEE163AC2172E9A50042E99C /* RemoteServiceOperation.swift */,
+				CEE163AE2172EB0A0042E99C /* RemoteServiceRequestConfiguration.swift */,
+				CEE163BA21738B5E0042E99C /* RemoteServiceResponse.swift */,
+				CEE163B621738AD30042E99C /* RemoteServicesError.swift */,
+			);
+			path = Public;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -501,6 +537,7 @@
 					};
 					CEE163612172A17C0042E99C = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					CEE163752172A27C0042E99C = {
 						CreatedOnToolsVersion = 10.1;
@@ -619,6 +656,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEE163AF2172EB0A0042E99C /* RemoteServiceRequestConfiguration.swift in Sources */,
+				CEE163B921738AF00042E99C /* RemoteServiceReplyHandler.swift in Sources */,
+				CEE163BB21738B5E0042E99C /* RemoteServiceResponse.swift in Sources */,
+				CEE163AB2172E8E90042E99C /* RemoteService.swift in Sources */,
+				CEE163B721738AD30042E99C /* RemoteServicesError.swift in Sources */,
+				CEE163AD2172E9A50042E99C /* RemoteServiceOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

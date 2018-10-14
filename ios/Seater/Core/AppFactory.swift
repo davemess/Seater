@@ -14,7 +14,7 @@ import SeaterKit
 /// Core factory for producing components necessary for app launch and run.
 class AppFactory {
     
-    typealias SeaterServiceProvider = (AppServiceProvider & SeaterKitServiceProvider)
+    typealias SeaterServiceProvider = (ServiceProvider & SeaterKitServiceProvider)
 
     // MARK: - private properties
     
