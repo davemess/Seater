@@ -12,7 +12,7 @@ import AppUI
 import os.log
 
 /// Displays Events in a detail view.
-class EventDetailViewController: UIViewController {
+class EventDetailViewController: UIViewController, ErrorAlertRenderer {
     
     // MARK: - outlets
     
@@ -23,7 +23,7 @@ class EventDetailViewController: UIViewController {
     // MARK: - private properties
     
     private let eventManager: EventManager
-    private let event: Event
+    private var event: Event
     private let log = AppLogger.log(.ui)
     
     // MARK: - lifecycle
@@ -63,6 +63,19 @@ class EventDetailViewController: UIViewController {
     // MARK: - data
     
     private func reloadData() {
-        // TODO: refresh event
+        NetworkIndicatorManager.shared.visible = true
+        
+        eventManager.reload(event: event) { (result) in
+            NetworkIndicatorManager.shared.visible = false
+            switch result {
+            case .success(let item):
+                os_log("%{public}@ did reload item with identifier %@", log: self.log, type: .info, self, item.identifier)
+                self.event = item
+                self.reloadView()
+            case .failure(let error):
+                os_log("%{public}@ did receive error %{public}@", log: self.log, type: .error, self, error.localizedDescription)
+                self.present(error)
+            }
+        }
     }
 }

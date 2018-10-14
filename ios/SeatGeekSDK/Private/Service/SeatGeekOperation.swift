@@ -26,7 +26,7 @@ struct SeatGeekPagination {
 /// SeatGeek API.
 enum SeatGeekOperation {
     case findEvents(pagination: SeatGeekPagination, clientId: String, query: String)
-    //    case getEvent(id: String)
+    case getEvent(identifier: String, clientId: String)
 }
 
 extension SeatGeekOperation: RemoteServiceOperation {
@@ -59,29 +59,28 @@ extension SeatGeekOperation: RemoteServiceOperation {
     // MARK: - RemoteServiceOperation
     
     var configuration: RemoteServiceRequestConfiguration {
-        switch self {
-        case .findEvents:
-            let pathComponents = self.pathComponents
-            return RemoteServiceRequestConfiguration(baseURL: Constants.base, scheme: .https, method: .get, contentType: .json, urlComponents: pathComponents)
-        }
+        let pathComponents = self.pathComponents
+        return RemoteServiceRequestConfiguration(baseURL: Constants.base, scheme: .https, method: .get, contentType: .json, urlComponents: pathComponents)
     }
     
     // MARK: - private
     
     private var pathComponents: Components {
-        switch self {
-        case .findEvents:
-            return Components(path: path, queryItems: queryItems)
-        }
+        return Components(path: path, queryItems: queryItems)
     }
     
     private var path: String {
-        return "/\(Constants.version)/\(endpoint.rawValue)"
+        switch self {
+        case .findEvents:
+            return "/\(Constants.version)/\(endpoint.rawValue)"
+        case .getEvent(let eventId, _):
+            return "/\(Constants.version)/\(endpoint.rawValue)/\(eventId)"
+        }
     }
     
     private var endpoint: Constants.Endpoint {
         switch self {
-        case .findEvents:
+        case .findEvents, .getEvent:
             return .events
         }
     }
@@ -97,6 +96,9 @@ extension SeatGeekOperation: RemoteServiceOperation {
                     .perPage: pagination.limit.description,
                     .clientId: clientId,
                     .query: query]
+            
+        case .getEvent(_, let clientId):
+                return [.clientId: clientId]
         }
     }
 }

@@ -30,5 +30,5 @@ public struct EventsServiceEvent {
 /// Defines methods for fetching Event data from a (remote) source.
 public protocol EventsService {
     func find(query: String, handler: @escaping (Result<[EventsServiceEvent]>) -> Void)
-//    func get(identifier: String, handler: @escaping (Result<EventsServiceEvent>) -> Void)
+    func get(eventId: String, handler: @escaping (Result<EventsServiceEvent>) -> Void)
 }

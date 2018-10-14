@@ -16,6 +16,7 @@ class SeatGeekEventsService: EventsService {
     
     enum Error: Swift.Error {
         case invalidResponse(Int)
+        case parseError
     }
     
     // MARK: - private properties
@@ -39,6 +40,8 @@ class SeatGeekEventsService: EventsService {
     }
     
     // MARK: - EventsService
+    
+    // FIXME: The handling implementation in both these funcs should be consolidated.
     
     func find(query: String, handler: @escaping (Result<[EventsServiceEvent]>) -> Void) {
         let operation: SeatGeekOperation = .findEvents(pagination: SeatGeekPagination(), clientId: apiKey, query: query)
@@ -66,6 +69,39 @@ class SeatGeekEventsService: EventsService {
                     handler(.failure(error))
                 }
             }
+        }
+    }
+    
+    func get(eventId: String, handler: @escaping (Result<EventsServiceEvent>) -> Void) {
+        let operation: SeatGeekOperation = .getEvent(identifier: eventId, clientId: apiKey)
+        remoteService.performOperation(operation) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let response):
+                    switch response.status {
+                    case .informational(let code), .redirection(let code), .clientError(let code), .serverError(let code):
+                        let error = Error.invalidResponse(code)
+                        handler(.failure(error))
+                        
+                    case .success:
+                        if let data = response.data {
+                            do {
+                                let responseEvent = try self.decoder.decode(SeatGeekEvent.self, from: data)
+                                if let event: EventsServiceEvent = EventsServiceEvent(responseEvent) {
+                                    handler(.success(event))
+                                } else {
+                                    handler(.failure(Error.parseError))
+                                }
+                            } catch {
+                                handler(.failure(error))
+                            }
+                        }
+                    }
+                case .failure(let error):
+                    handler(.failure(error))
+                }
+            }
+            
         }
     }
 }

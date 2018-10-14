@@ -109,7 +109,11 @@ class EventListViewController: UIViewController, ErrorAlertRenderer {
     
     // TODO: remove @objc when refresh control is removed
     @objc private func reloadData() {
+        NetworkIndicatorManager.shared.visible = true
+        
         eventManager.find(query: "Cow") { (result) in
+            NetworkIndicatorManager.shared.visible = false
+            
             switch result {
             case .success(let items):
                 os_log("%{public}@ did reload %i objects", log: self.log, type: .info, self, items.count)

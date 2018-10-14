@@ -33,6 +33,7 @@
 		CEE163B721738AD30042E99C /* RemoteServicesError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE163B621738AD30042E99C /* RemoteServicesError.swift */; };
 		CEE163B921738AF00042E99C /* RemoteServiceReplyHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE163B821738AF00042E99C /* RemoteServiceReplyHandler.swift */; };
 		CEE163BB21738B5E0042E99C /* RemoteServiceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE163BA21738B5E0042E99C /* RemoteServiceResponse.swift */; };
+		CEE163D62173D2F50042E99C /* NetworkIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE163D52173D2F50042E99C /* NetworkIndicatorManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		CEE163B621738AD30042E99C /* RemoteServicesError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteServicesError.swift; sourceTree = "<group>"; };
 		CEE163B821738AF00042E99C /* RemoteServiceReplyHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteServiceReplyHandler.swift; sourceTree = "<group>"; };
 		CEE163BA21738B5E0042E99C /* RemoteServiceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteServiceResponse.swift; sourceTree = "<group>"; };
+		CEE163D52173D2F50042E99C /* NetworkIndicatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkIndicatorManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,9 +237,10 @@
 			isa = PBXGroup;
 			children = (
 				CEE163572172991F0042E99C /* Data sources */,
-				CEE16352217298A30042E99C /* Error */,
 				CEE16349217295920042E99C /* Definitions */,
+				CEE16352217298A30042E99C /* Error */,
 				CEE16348217295850042E99C /* Support Files */,
+				CEE163D42173D2D90042E99C /* Utility */,
 			);
 			path = AppUI;
 			sourceTree = "<group>";
@@ -347,6 +350,14 @@
 				CEE163B621738AD30042E99C /* RemoteServicesError.swift */,
 			);
 			path = Public;
+			sourceTree = "<group>";
+		};
+		CEE163D42173D2D90042E99C /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				CEE163D52173D2F50042E99C /* NetworkIndicatorManager.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -644,6 +655,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEE163D62173D2F50042E99C /* NetworkIndicatorManager.swift in Sources */,
 				CEE16354217298AC0042E99C /* ErrorAlertRenderer.swift in Sources */,
 				CEE16356217298D10042E99C /* ErrorAlert.swift in Sources */,
 				CEE1634B217295A80042E99C /* ReusableCell.swift in Sources */,
