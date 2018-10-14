@@ -68,6 +68,12 @@ class EventListViewController: UIViewController, ErrorAlertRenderer {
         os_log("%{public}@ viewDidLoad", log: log, type: .info, self.description)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        resetView(animated: animated)
+    }
+    
     // MARK: - view
     
     private func configureView() {
@@ -86,6 +92,12 @@ class EventListViewController: UIViewController, ErrorAlertRenderer {
         tableView.reloadData()
     }
     
+    private func resetView(animated: Bool) {
+        if let indexPath = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: indexPath, animated: animated)
+        }
+    }
+    
     private func configureViewController() {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.largeTitleDisplayMode = .always
@@ -95,6 +107,7 @@ class EventListViewController: UIViewController, ErrorAlertRenderer {
     
     // MARK: - data
     
+    // TODO: remove @objc when refresh control is removed
     @objc private func reloadData() {
         eventManager.find(query: "Cow") { (result) in
             switch result {

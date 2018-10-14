@@ -14,11 +14,13 @@ class ViewControllerFactory {
     
     enum ViewControllerType {
         case eventList(delegate: EventListViewControllerDelegate?)
+        case eventDetail(event: Event)
     }
     
     // MARK: - private properties
     
     private lazy var eventManager: EventManager = {
+        // FIXME: This shoudl be injected, not shared access
         return SeaterKit.shared.eventManager
     }()
     
@@ -29,6 +31,10 @@ class ViewControllerFactory {
         case .eventList(let delegate):
             let viewController = EventListViewController(eventManager: eventManager)
             viewController.delegate = delegate
+            return viewController
+            
+        case .eventDetail(let event):
+            let viewController = EventDetailViewController(eventManager: eventManager, event: event)
             return viewController
         }
     }

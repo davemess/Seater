@@ -61,6 +61,8 @@
 		CEE163C42173B3030042E99C /* SeatGeekResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE163C32173B3030042E99C /* SeatGeekResponse.swift */; };
 		CEE163C62173BA1D0042E99C /* EventsServiceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE163C52173BA1D0042E99C /* EventsServiceExtensions.swift */; };
 		CEE163C72173BBC00042E99C /* SeaterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE1631421728D6F0042E99C /* SeaterKit.framework */; };
+		CEE163D22173C8CD0042E99C /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE163D02173C8CD0042E99C /* EventDetailViewController.swift */; };
+		CEE163D32173C8CD0042E99C /* EventDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE163D12173C8CD0042E99C /* EventDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +156,8 @@
 		CEE163B4217383940042E99C /* SeatGeekOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatGeekOperation.swift; sourceTree = "<group>"; };
 		CEE163C32173B3030042E99C /* SeatGeekResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatGeekResponse.swift; sourceTree = "<group>"; };
 		CEE163C52173BA1D0042E99C /* EventsServiceExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsServiceExtensions.swift; sourceTree = "<group>"; };
+		CEE163D02173C8CD0042E99C /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
+		CEE163D12173C8CD0042E99C /* EventDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -365,6 +369,7 @@
 		CEE1630D21728A560042E99C /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				CEE163CF2173C8B00042E99C /* Detail */,
 				CEE1630E21728A5F0042E99C /* List */,
 			);
 			path = Events;
@@ -523,6 +528,15 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		CEE163CF2173C8B00042E99C /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				CEE163D02173C8CD0042E99C /* EventDetailViewController.swift */,
+				CEE163D12173C8CD0042E99C /* EventDetailViewController.xib */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -653,6 +667,7 @@
 			files = (
 				CE7B787C2172570F00691715 /* Debug.xcconfig in Resources */,
 				CEE16339217295250042E99C /* EventListTableViewCell.xib in Resources */,
+				CEE163D32173C8CD0042E99C /* EventDetailViewController.xib in Resources */,
 				CE7B786D2172556D00691715 /* LaunchScreen.storyboard in Resources */,
 				CE7B786A2172556D00691715 /* Assets.xcassets in Resources */,
 				CE7B787D2172570F00691715 /* Release.xcconfig in Resources */,
@@ -727,6 +742,7 @@
 				CE7B78B52172650700691715 /* AppLogger.swift in Sources */,
 				CE7B78F42172751B00691715 /* EventsCoordinator.swift in Sources */,
 				CE7B78C521726A1700691715 /* CrashlyticsService.swift in Sources */,
+				CEE163D22173C8CD0042E99C /* EventDetailViewController.swift in Sources */,
 				CEE163A22172A9170042E99C /* Keys.swift in Sources */,
 				CE7B78B92172668C00691715 /* AppServices.swift in Sources */,
 				CE7B78ED2172719700691715 /* NavigationCoordinator.swift in Sources */,
