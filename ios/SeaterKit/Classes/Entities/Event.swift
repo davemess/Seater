@@ -9,7 +9,7 @@
 import Foundation
 
 /// Data structure which represents a Event.
-public class Event {
+public class Event: Codable {
     
     public let identifier: String
     public let title: String

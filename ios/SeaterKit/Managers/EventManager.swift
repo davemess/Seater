@@ -73,8 +73,13 @@ public class EventManager {
         event.favorited.toggle()
         
         let identifier = event.identifier as NSString
-        storage[identifier] = event
-        handler(event)
+        if event.favorited {
+            storage[identifier] = event
+            handler(event)
+        } else {
+            storage[identifier] = nil
+            handler(event)
+        }
     }
     
     // MARK: - private

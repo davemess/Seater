@@ -7,6 +7,8 @@
 
 import Foundation
 
+public typealias CodableObject = (AnyObject & Codable)
+
 /// Describes a protocol for conforming classes to adopt in order to support
 /// high-level caching operations.
 public protocol Cache {
@@ -14,8 +16,8 @@ public protocol Cache {
     associatedtype Value
     associatedtype Key = String
     
-    func set(_ value: Value?, for key: Key)
-//    func hasValue(for key: Key) -> Bool
+    func set(_ value: Value, for key: Key)
+    func removeValue(for key: Key)
     func getValue(for key: Key) -> Value?
     func clear()
 }
@@ -29,7 +31,9 @@ public struct MemoryConfiguration {
 
 /// Wraps configuration parameters for a DiskCache.
 public struct DiskConfiguration {
-    public static let `default`: DiskConfiguration = DiskConfiguration()
+    public static let `default`: DiskConfiguration = DiskConfiguration(cacheName: "caches")
+    
+    public let cacheName: String
 }
 
 /// Wraps configuration parameters for a Storage object.

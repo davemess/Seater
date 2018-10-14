@@ -8,7 +8,7 @@
 import Foundation
 
 /// A volatile, memory cache.
-class MemoryCache<Key: AnyObject, Value: AnyObject>: NSObject, NSCacheDelegate, Cache {
+class MemoryCache<Key: AnyObject, Value: CodableObject>: NSObject, NSCacheDelegate, Cache {
     
     typealias Cacheable = Value
     
@@ -27,14 +27,14 @@ class MemoryCache<Key: AnyObject, Value: AnyObject>: NSObject, NSCacheDelegate, 
         self.cache.delegate = self
     }
     
-    // MARK: - CacheType
+    // MARK: - Cache
     
-    func set(_ value: Value?, for key: Key) {
-        if let value = value {
-            cache.setObject(value, forKey: key)
-        } else {
-            cache.removeObject(forKey: key)
-        }
+    func set(_ value: Value, for key: Key) {
+        cache.setObject(value, forKey: key)
+    }
+    
+    func removeValue(for key: Key) {
+        cache.removeObject(forKey: key)
     }
     
     func getValue(for key: Key) -> Value? {
@@ -48,6 +48,6 @@ class MemoryCache<Key: AnyObject, Value: AnyObject>: NSObject, NSCacheDelegate, 
     // MARK: - NSCacheDelegate
     
     func cache(_ cache: NSCache<AnyObject, AnyObject>, willEvictObject obj: Any) {
-        //        <#code#>
+        // TODO: alert delegate and save to disk
     }
 }
