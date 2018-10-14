@@ -9,10 +9,23 @@
 import Foundation
 import RemoteServices
 
+/// Wraps pagination options.
+struct SeatGeekPagination {
+    static let DefaultLimit = 20
+    
+    let page: Int
+    let limit: Int
+    
+    init(page: Int = 1, limit: Int = SeatGeekPagination.DefaultLimit) {
+        self.page = page
+        self.limit = limit
+    }
+}
+
 /// This enum summarizes and encapsulates individual requests against the
 /// SeatGeek API.
 enum SeatGeekOperation {
-    case findEvents(clientId: String, query: String)
+    case findEvents(pagination: SeatGeekPagination, clientId: String, query: String)
     //    case getEvent(id: String)
 }
 
@@ -35,6 +48,8 @@ extension SeatGeekOperation: RemoteServiceOperation {
         
         // query items
         enum QueryKey: String {
+            case page
+            case perPage = "per_page"
             case clientId = "client_id"
             case query = "q"
         }
@@ -77,8 +92,11 @@ extension SeatGeekOperation: RemoteServiceOperation {
     
     private var queryDictionary: [Constants.QueryKey: String?]? {
         switch self {
-        case .findEvents(let clientId, let query):
-            return [.clientId: clientId, .query: query]
+        case .findEvents(let pagination, let clientId, let query):
+            return [.page: pagination.page.description,
+                    .perPage: pagination.limit.description,
+                    .clientId: clientId,
+                    .query: query]
         }
     }
 }

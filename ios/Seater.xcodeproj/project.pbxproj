@@ -491,12 +491,36 @@
 		CEE1639E2172A7C00042E99C /* Private */ = {
 			isa = PBXGroup;
 			children = (
-				CEE1639F2172A7D00042E99C /* SeatGeekEventsService.swift */,
-				CEE163B4217383940042E99C /* SeatGeekOperation.swift */,
-				CEE163C32173B3030042E99C /* SeatGeekResponse.swift */,
-				CEE163C52173BA1D0042E99C /* EventsServiceExtensions.swift */,
+				CEE163CB2173C60C0042E99C /* Extensions */,
+				CEE163CC2173C6140042E99C /* Responses */,
+				CEE163CD2173C6220042E99C /* Service */,
 			);
 			path = Private;
+			sourceTree = "<group>";
+		};
+		CEE163CB2173C60C0042E99C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CEE163C52173BA1D0042E99C /* EventsServiceExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CEE163CC2173C6140042E99C /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				CEE163C32173B3030042E99C /* SeatGeekResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		CEE163CD2173C6220042E99C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				CEE1639F2172A7D00042E99C /* SeatGeekEventsService.swift */,
+				CEE163B4217383940042E99C /* SeatGeekOperation.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

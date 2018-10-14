@@ -34,14 +34,14 @@ class SeatGeekEventsService: EventsService {
     
     // MARK: - lifecycle
     
-    public init(_ apiKey: String) {
+    init(_ apiKey: String) {
         self.apiKey = apiKey
     }
     
     // MARK: - EventsService
     
-    public func find(query: String, handler: @escaping (Result<[EventsServiceEvent]>) -> Void) {
-        let operation: SeatGeekOperation = .findEvents(clientId: apiKey, query: query)
+    func find(query: String, handler: @escaping (Result<[EventsServiceEvent]>) -> Void) {
+        let operation: SeatGeekOperation = .findEvents(pagination: SeatGeekPagination(), clientId: apiKey, query: query)
         remoteService.performOperation(operation) { result in
             DispatchQueue.main.async {
                 switch result {
