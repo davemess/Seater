@@ -21,6 +21,10 @@ class AppServices: ServiceProvider, SeaterKitServiceProvider {
         return CrashlyticsService(deployment)
     }()
     
+    lazy var imageCacheService: ImageCacheService = {
+        return KingfisherService(deployment)
+    }()
+    
     lazy var themeProvider: ThemeProviderService = {
         return StandardThemeProvider(deployment)
     }()

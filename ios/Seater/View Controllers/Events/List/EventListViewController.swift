@@ -154,13 +154,6 @@ extension EventListViewController: UITableViewDelegate {
     }
 }
 
-extension EventListViewController: UITableViewDataSourcePrefetching {
-    
-    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-        // TODO: preload image data
-    }
-}
-
 extension EventListViewController: EventDetailViewControllerDelegate {
     
     func viewController(_ viewController: EventDetailViewController, didToggleFavorite event: Event) {

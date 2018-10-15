@@ -15,14 +15,14 @@ public class Event: Codable {
     public let title: String
     public let location: String
     public let date: Date
-    public let imageUrl: String // TODO: convert to URL
+    public let imageUrl: URL
     public var favorited: Bool
     
     public init(identifier: String,
                 title: String,
                 location: String,
                 date: Date,
-                imageUrl: String,
+                imageUrl: URL,
                 favorited: Bool) {
         self.identifier = identifier
         self.title = title
@@ -35,12 +35,14 @@ public class Event: Codable {
 
 extension Event {
     
-    convenience init(event: EventsServiceEvent, favorited: Bool) {
+    convenience init?(event: EventsServiceEvent, favorited: Bool) {
+        guard let url = URL(string: event.imageUrl) else { return nil }
+        
         self.init(identifier: event.identifier,
                   title: event.title,
                   location: event.location,
                   date: event.date,
-                  imageUrl: event.imageUrl,
+                  imageUrl: url,
                   favorited: favorited)
     }
 }

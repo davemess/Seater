@@ -22,7 +22,7 @@
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1im-uQ-Q03">
                         <rect key="frame" x="16" y="19" width="288" height="61.5"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="mwD-p2-4LA">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="mwD-p2-4LA">
                                 <rect key="frame" x="0.0" y="0.0" width="61.5" height="61.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="mwD-p2-4LA" secondAttribute="height" multiplier="1:1" id="SOB-yu-p2o"/>
@@ -55,6 +55,7 @@
                     </stackView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7oT-gi-EDB">
                         <rect key="frame" x="8" y="10" width="30" height="30"/>
+                        <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="30" id="Gkh-da-Mml"/>
                             <constraint firstAttribute="height" constant="30" id="SDI-bF-2fa"/>

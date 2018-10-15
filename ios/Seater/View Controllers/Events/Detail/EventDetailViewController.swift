@@ -9,6 +9,7 @@
 import UIKit
 import SeaterKit
 import AppUI
+import Kingfisher
 import os.log
 
 /// Defines callbacks which may occur in an EventDetailViewController.
@@ -18,6 +19,12 @@ protocol EventDetailViewControllerDelegate: AnyObject {
 
 /// Displays Events in a detail view.
 class EventDetailViewController: UIViewController, ErrorAlertRenderer {
+    
+    // MARK: - nested types
+    
+    private struct Constants {
+        static let cornerRadius: CGFloat = 10.0
+    }
     
     // MARK: - outlets
     
@@ -34,6 +41,7 @@ class EventDetailViewController: UIViewController, ErrorAlertRenderer {
     private let eventManager: EventManager
     private var event: Event
     private var reloadedEvent: Event?
+    private var currentTask: RetrieveImageTask?
     private let log = AppLogger.log(.ui)
     
     // MARK: - lifecycle
@@ -60,6 +68,12 @@ class EventDetailViewController: UIViewController, ErrorAlertRenderer {
         os_log("%{public}@ viewDidLoad", log: log, type: .info, self.description)
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        currentTask?.cancel()
+    }
+    
     // MARK: - view
     
     private func reloadView(for event: Event) {
@@ -68,6 +82,9 @@ class EventDetailViewController: UIViewController, ErrorAlertRenderer {
         //eventImageView.image =
         locationLabel.text = event.location
         dateLabel.text = DateViewFormatter.format(event.date, style: .long)
+        eventImageView.kf.indicatorType = .activity
+        eventImageView.layer.cornerRadius = Constants.cornerRadius
+        currentTask = eventImageView.kf.setImage(with: event.imageUrl, placeholder: #imageLiteral(resourceName: "placeholder"))
     }
     
     private func reloadNavigationItem() {

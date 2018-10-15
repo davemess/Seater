@@ -14,6 +14,10 @@ import os.log
 /// Manages Event operations.
 public class EventManager {
     
+    private enum Error: Swift.Error {
+        case unknown
+    }
+    
     // MARK: - private properties
     
     private let eventsService: EventsService
@@ -38,10 +42,10 @@ public class EventManager {
         eventsService.find(query: query) { (result) in
             switch result {
             case .success(let baseEvents):
-                let events = baseEvents.map { baseEvent -> Event in
+                let events = baseEvents.map { baseEvent -> Event? in
                     let favorited = self.isFavorite(event: baseEvent)
                     return Event(event: baseEvent, favorited: favorited)
-                }
+                    }.compactMap { $0 }
                 handler(.success(events))
             case .failure(let error):
                 os_log("did receive error %{public}@", log: self.log, type: .error, error.localizedDescription)
@@ -60,8 +64,11 @@ public class EventManager {
             switch result {
             case .success(let baseEvent):
                 let favorited = self.isFavorite(event: baseEvent)
-                let reloaded = Event(event: baseEvent, favorited: favorited)
-                handler(.success(reloaded))
+                if let reloaded = Event(event: baseEvent, favorited: favorited) {
+                    handler(.success(reloaded))
+                } else {
+                    handler(.failure(Error.unknown))
+                }
             case .failure(let error):
                 os_log("did receive error %{public}@", log: self.log, type: .error, error.localizedDescription)
                 handler(.failure(error))

@@ -12,6 +12,7 @@ import Foundation
 protocol ServiceProvider {
     var services: [Service] { get }
     var analyticsService: AnalyticsService { get }
+    var imageCacheService: ImageCacheService { get }
     var themeProvider: ThemeProviderService { get }
 }
 
@@ -20,6 +21,7 @@ extension ServiceProvider {
     var services: [Service] {
         return [
             analyticsService,
+            imageCacheService,
             themeProvider
         ]
     }

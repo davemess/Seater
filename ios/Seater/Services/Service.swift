@@ -32,3 +32,6 @@ protocol AnalyticsService: Service {
 protocol ThemeProviderService: Service {
     var theme: AppearanceTheme { get }
 }
+
+/// Describes a service which supply an appearance theme.
+protocol ImageCacheService: LaunchService {}

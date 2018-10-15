@@ -65,6 +65,8 @@
 		CEE163D32173C8CD0042E99C /* EventDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE163D12173C8CD0042E99C /* EventDetailViewController.xib */; };
 		CEE163F12173F3620042E99C /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE163F02173F3620042E99C /* Cache.framework */; };
 		CEE163F82173FBA80042E99C /* EventAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE163F72173FBA80042E99C /* EventAction.swift */; };
+		CEE163FC21740E220042E99C /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE163FB21740E220042E99C /* Kingfisher.framework */; };
+		CEE163FF217419F90042E99C /* KingfisherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE163FE217419F90042E99C /* KingfisherService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,6 +164,8 @@
 		CEE163D12173C8CD0042E99C /* EventDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventDetailViewController.xib; sourceTree = "<group>"; };
 		CEE163F02173F3620042E99C /* Cache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Cache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE163F72173FBA80042E99C /* EventAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAction.swift; sourceTree = "<group>"; };
+		CEE163FB21740E220042E99C /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		CEE163FE217419F90042E99C /* KingfisherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +182,7 @@
 				CEE163942172A6180042E99C /* SeatGeekSDK.framework in Frameworks */,
 				CEE1631B21728D700042E99C /* SeaterKit.framework in Frameworks */,
 				CE7B78C2217269E100691715 /* Crashlytics.framework in Frameworks */,
+				CEE163FC21740E220042E99C /* Kingfisher.framework in Frameworks */,
 				CE7B78C1217269E100691715 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,6 +308,7 @@
 				CE7B78DF21726BB600691715 /* AppAnalytics.framework */,
 				CE7B78A82172642900691715 /* AppConfiguration.framework */,
 				CE7B7904217277E300691715 /* AppTheme.framework */,
+				CEE163FB21740E220042E99C /* Kingfisher.framework */,
 				CE7B78C0217269E100691715 /* Crashlytics.framework */,
 				CE7B78BF217269E100691715 /* Fabric.framework */,
 			);
@@ -324,6 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				CE7B78C421726A1700691715 /* CrashlyticsService.swift */,
+				CEE163FE217419F90042E99C /* KingfisherService.swift */,
 			);
 			path = "External Services";
 			sourceTree = "<group>";
@@ -576,6 +583,7 @@
 				CE7B78AB2172642900691715 /* Embed Frameworks */,
 				CE7B787F21725C8200691715 /* SwiftLint */,
 				CE7B78BE217269A500691715 /* Fabric */,
+				CEE163FD21740E2E0042E99C /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -736,6 +744,26 @@
 			shellPath = /bin/sh;
 			shellScript = "./Frameworks/Fabric.framework/run ff6b077200b320d3fbf1dcc639811c7dc98d3085 f1e272d897179e0221e354d7e81d6dafe6a13053f26367cb5427143d3ed60ebe\n";
 		};
+		CEE163FD21740E2E0042E99C /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Kingfisher.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -760,6 +788,7 @@
 				CE7B78BB2172669F00691715 /* Service.swift in Sources */,
 				CE7B78F22172746D00691715 /* NavigationCoordinatorFactory.swift in Sources */,
 				CE7B78652172556B00691715 /* EventListViewController.swift in Sources */,
+				CEE163FF217419F90042E99C /* KingfisherService.swift in Sources */,
 				CEE1630C217288C20042E99C /* ViewControllerFactory.swift in Sources */,
 				CEE1635C21729E050042E99C /* DateViewFormatter.swift in Sources */,
 				CE7B790F2172795E00691715 /* ThemeProvider.swift in Sources */,
@@ -948,6 +977,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Seater/Support Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
@@ -973,6 +1003,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Seater/Support Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
