@@ -36,19 +36,13 @@
 		CEE1631C21728D700042E99C /* SeaterKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CEE1631421728D6F0042E99C /* SeaterKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CEE1632321728DA00042E99C /* SeaterKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1632221728DA00042E99C /* SeaterKit.swift */; };
 		CEE1632521728DCA0042E99C /* SeaterKitLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1632421728DCA0042E99C /* SeaterKitLogger.swift */; };
-		CEE1632821728FBF0042E99C /* AppAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE1632721728FBF0042E99C /* AppAnalytics.framework */; };
-		CEE1632A21728FBF0042E99C /* AppConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE1632921728FBF0042E99C /* AppConfiguration.framework */; };
-		CEE1632C21728FBF0042E99C /* AppTheme.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE1632B21728FBF0042E99C /* AppTheme.framework */; };
 		CEE163302172904D0042E99C /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1632F2172904D0042E99C /* Event.swift */; };
 		CEE16332217290620042E99C /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE16331217290620042E99C /* EventManager.swift */; };
 		CEE16338217295250042E99C /* EventListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE16336217295250042E99C /* EventListTableViewCell.swift */; };
 		CEE16339217295250042E99C /* EventListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE16337217295250042E99C /* EventListTableViewCell.xib */; };
-		CEE1634F217295CB0042E99C /* AppUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE1634E217295CB0042E99C /* AppUI.framework */; };
 		CEE1635C21729E050042E99C /* DateViewFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1635B21729E050042E99C /* DateViewFormatter.swift */; };
-		CEE1636B2172A1850042E99C /* RemoteServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE1636A2172A1850042E99C /* RemoteServices.framework */; };
 		CEE163702172A22B0042E99C /* EventsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1636F2172A22B0042E99C /* EventsService.swift */; };
 		CEE163832172A2DD0042E99C /* Results.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE163822172A2DD0042E99C /* Results.framework */; };
-		CEE163852172A2EC0042E99C /* Results.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE163842172A2EC0042E99C /* Results.framework */; };
 		CEE163872172A4300042E99C /* SeaterKitServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE163862172A4300042E99C /* SeaterKitServiceProvider.swift */; };
 		CEE163912172A6180042E99C /* SeatGeekSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = CEE1638F2172A6180042E99C /* SeatGeekSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CEE163942172A6180042E99C /* SeatGeekSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE1638D2172A6180042E99C /* SeatGeekSDK.framework */; };
@@ -70,6 +64,21 @@
 		CEE1640221742C110042E99C /* EventSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1640121742C110042E99C /* EventSearchController.swift */; };
 		CEE16404217430610042E99C /* EventSearcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE16403217430610042E99C /* EventSearcher.swift */; };
 		CEE164072174309A0042E99C /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE164062174309A0042E99C /* StringExtensions.swift */; };
+		CEE1641E217442C50042E99C /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE163F02173F3620042E99C /* Cache.framework */; };
+		CEE1641F217442C50042E99C /* Cache.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CEE163F02173F3620042E99C /* Cache.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CEE16420217442C50042E99C /* RemoteServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE163B2217376BA0042E99C /* RemoteServices.framework */; };
+		CEE16421217442C50042E99C /* RemoteServices.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CEE163B2217376BA0042E99C /* RemoteServices.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CEE16422217442C50042E99C /* Results.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE163842172A2EC0042E99C /* Results.framework */; };
+		CEE16424217442C50042E99C /* Results.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE163822172A2DD0042E99C /* Results.framework */; };
+		CEE16425217442C50042E99C /* Results.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CEE163822172A2DD0042E99C /* Results.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CEE16428217442C50042E99C /* AppUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE1634E217295CB0042E99C /* AppUI.framework */; };
+		CEE16429217442C50042E99C /* AppUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CEE1634E217295CB0042E99C /* AppUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CEE1642C217442C50042E99C /* AppConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE1632921728FBF0042E99C /* AppConfiguration.framework */; };
+		CEE1642D217442C60042E99C /* AppConfiguration.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CEE1632921728FBF0042E99C /* AppConfiguration.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CEE1642E217442C60042E99C /* AppTheme.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE1632B21728FBF0042E99C /* AppTheme.framework */; };
+		CEE16430217442C60042E99C /* AppAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7B78DF21726BB600691715 /* AppAnalytics.framework */; };
+		CEE16431217442C60042E99C /* AppAnalytics.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE7B78DF21726BB600691715 /* AppAnalytics.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CEE16435217442C60042E99C /* AppTheme.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE7B7904217277E300691715 /* AppTheme.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,8 +105,15 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				CEE16435217442C60042E99C /* AppTheme.framework in Embed Frameworks */,
+				CEE16421217442C50042E99C /* RemoteServices.framework in Embed Frameworks */,
+				CEE1642D217442C60042E99C /* AppConfiguration.framework in Embed Frameworks */,
+				CEE16429217442C50042E99C /* AppUI.framework in Embed Frameworks */,
 				CEE163952172A6180042E99C /* SeatGeekSDK.framework in Embed Frameworks */,
 				CEE1631C21728D700042E99C /* SeaterKit.framework in Embed Frameworks */,
+				CEE16425217442C50042E99C /* Results.framework in Embed Frameworks */,
+				CEE1641F217442C50042E99C /* Cache.framework in Embed Frameworks */,
+				CEE16431217442C60042E99C /* AppAnalytics.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -179,17 +195,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEE163852172A2EC0042E99C /* Results.framework in Frameworks */,
-				CEE1636B2172A1850042E99C /* RemoteServices.framework in Frameworks */,
-				CEE1634F217295CB0042E99C /* AppUI.framework in Frameworks */,
-				CEE1632821728FBF0042E99C /* AppAnalytics.framework in Frameworks */,
-				CEE1632A21728FBF0042E99C /* AppConfiguration.framework in Frameworks */,
-				CEE1632C21728FBF0042E99C /* AppTheme.framework in Frameworks */,
+				CEE1642E217442C60042E99C /* AppTheme.framework in Frameworks */,
+				CEE1642C217442C50042E99C /* AppConfiguration.framework in Frameworks */,
+				CEE16430217442C60042E99C /* AppAnalytics.framework in Frameworks */,
+				CEE16424217442C50042E99C /* Results.framework in Frameworks */,
 				CEE163942172A6180042E99C /* SeatGeekSDK.framework in Frameworks */,
+				CEE16420217442C50042E99C /* RemoteServices.framework in Frameworks */,
+				CEE16428217442C50042E99C /* AppUI.framework in Frameworks */,
 				CEE1631B21728D700042E99C /* SeaterKit.framework in Frameworks */,
 				CE7B78C2217269E100691715 /* Crashlytics.framework in Frameworks */,
 				CEE163FC21740E220042E99C /* Kingfisher.framework in Frameworks */,
 				CE7B78C1217269E100691715 /* Fabric.framework in Frameworks */,
+				CEE1641E217442C50042E99C /* Cache.framework in Frameworks */,
+				CEE16422217442C50042E99C /* Results.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

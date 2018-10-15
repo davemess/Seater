@@ -42,9 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let rootController: UINavigationController = UINavigationController()
         self.rootCoordinator = self.appFactory.rootCoordinator(with: rootController)
         
-        super.init()
-        
-        os_log("%{public}@ did init with configuration %{public}@ and launchOptions: %{public}@", log: log, type: .info, self, buildConfiguration.description)
+        super.init()        
     }
     
     // MARK: - application lifecycle
