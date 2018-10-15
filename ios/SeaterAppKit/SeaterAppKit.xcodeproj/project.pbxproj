@@ -39,6 +39,8 @@
 		CEE163ED2173F19B0042E99C /* MemoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE163EC2173F19B0042E99C /* MemoryCache.swift */; };
 		CEE163EF2173F24A0042E99C /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE163EE2173F24A0042E99C /* Cache.swift */; };
 		CEE163F32173F49B0042E99C /* DiskCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE163F22173F49B0042E99C /* DiskCache.swift */; };
+		D9E00EF221755A4B007E7241 /* KeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E00EF121755A4B007E7241 /* KeyboardObserver.swift */; };
+		D9E00EF421755A5E007E7241 /* KeyboardEventInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E00EF321755A5E007E7241 /* KeyboardEventInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +89,8 @@
 		CEE163EC2173F19B0042E99C /* MemoryCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryCache.swift; sourceTree = "<group>"; };
 		CEE163EE2173F24A0042E99C /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		CEE163F22173F49B0042E99C /* DiskCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskCache.swift; sourceTree = "<group>"; };
+		D9E00EF121755A4B007E7241 /* KeyboardObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardObserver.swift; sourceTree = "<group>"; };
+		D9E00EF321755A5E007E7241 /* KeyboardEventInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardEventInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -376,6 +380,8 @@
 		CEE163D42173D2D90042E99C /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				D9E00EF321755A5E007E7241 /* KeyboardEventInfo.swift */,
+				D9E00EF121755A4B007E7241 /* KeyboardObserver.swift */,
 				CEE163D52173D2F50042E99C /* NetworkIndicatorManager.swift */,
 			);
 			path = Utility;
@@ -752,7 +758,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEE163D62173D2F50042E99C /* NetworkIndicatorManager.swift in Sources */,
+				D9E00EF421755A5E007E7241 /* KeyboardEventInfo.swift in Sources */,
 				CEE16354217298AC0042E99C /* ErrorAlertRenderer.swift in Sources */,
+				D9E00EF221755A4B007E7241 /* KeyboardObserver.swift in Sources */,
 				CEE16356217298D10042E99C /* ErrorAlert.swift in Sources */,
 				CEE1634B217295A80042E99C /* ReusableCell.swift in Sources */,
 				CEE1634D217295BA0042E99C /* NibAssociated.swift in Sources */,

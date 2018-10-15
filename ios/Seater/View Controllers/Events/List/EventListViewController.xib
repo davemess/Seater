@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EventListViewController" customModule="Seater" customModuleProvider="target">
             <connections>
+                <outlet property="_bottomLayoutConstraint" destination="hlb-sv-SbP" id="Ccq-38-3VX"/>
                 <outlet property="tableView" destination="6bp-qn-5sQ" id="yL5-xQ-CRu"/>
                 <outlet property="view" destination="iN0-l3-epB" id="dW7-pd-MnV"/>
             </connections>

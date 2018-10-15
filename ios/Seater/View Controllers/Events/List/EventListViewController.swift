@@ -18,7 +18,7 @@ protocol EventListViewControllerDelegate: AnyObject {
 }
 
 /// Displays Events in a list view.
-class EventListViewController: UIViewController, ErrorAlertRenderer {
+class EventListViewController: UIViewController, ErrorAlertRenderer, KeyboardAppearanceResponder, KeyboardObserverDelegate {
     
     // MARK: - nested defintions
     
@@ -31,6 +31,7 @@ class EventListViewController: UIViewController, ErrorAlertRenderer {
     // MARK: - outlets
     
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var _bottomLayoutConstraint: NSLayoutConstraint!
     
     // MARK: - public properties
     
@@ -44,6 +45,12 @@ class EventListViewController: UIViewController, ErrorAlertRenderer {
     
     private var dataSource: GenericDataSource<Event>
     private var imagePrefetcher: ImagePrefetcher?
+    private var keyboardObserver = KeyboardObserver([.willShow, .willHide])
+    
+    // MARK: - KeyboardAppearanceResponder
+    
+    var bottomLayoutConstraint: NSLayoutConstraint { return _bottomLayoutConstraint }
+    var standardOffset: CGFloat { return 0.0 }
     
     // MARK: - lifecycle
     
@@ -107,6 +114,8 @@ class EventListViewController: UIViewController, ErrorAlertRenderer {
         
         title = NSLocalizedString("Events", comment: "")
         definesPresentationContext = true
+        
+        keyboardObserver.delegate = self
     }
 }
 

@@ -94,6 +94,7 @@
 		CEE16431217442C60042E99C /* AppAnalytics.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE7B78DF21726BB600691715 /* AppAnalytics.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CEE16435217442C60042E99C /* AppTheme.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE7B7904217277E300691715 /* AppTheme.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D9E00EF021754F9F007E7241 /* ErrorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E00EEF21754F9F007E7241 /* ErrorExtensions.swift */; };
+		D9E00EF621755A8E007E7241 /* KeyboardObserverDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E00EF521755A8E007E7241 /* KeyboardObserverDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -204,6 +205,7 @@
 		CEE16403217430610042E99C /* EventSearcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSearcher.swift; sourceTree = "<group>"; };
 		CEE164062174309A0042E99C /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		D9E00EEF21754F9F007E7241 /* ErrorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorExtensions.swift; sourceTree = "<group>"; };
+		D9E00EF521755A8E007E7241 /* KeyboardObserverDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardObserverDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -606,6 +608,7 @@
 			isa = PBXGroup;
 			children = (
 				D9E00EEF21754F9F007E7241 /* ErrorExtensions.swift */,
+				D9E00EF521755A8E007E7241 /* KeyboardObserverDelegate.swift */,
 				CEE164062174309A0042E99C /* StringExtensions.swift */,
 			);
 			path = Extensions;
@@ -859,6 +862,7 @@
 				CE7B78B52172650700691715 /* AppLogger.swift in Sources */,
 				CEE16404217430610042E99C /* EventSearcher.swift in Sources */,
 				CE7B78F42172751B00691715 /* EventsCoordinator.swift in Sources */,
+				D9E00EF621755A8E007E7241 /* KeyboardObserverDelegate.swift in Sources */,
 				CE7B78C521726A1700691715 /* CrashlyticsService.swift in Sources */,
 				D9E00EF021754F9F007E7241 /* ErrorExtensions.swift in Sources */,
 				CEE163D22173C8CD0042E99C /* EventDetailViewController.swift in Sources */,
