@@ -27,8 +27,13 @@ public struct EventsServiceEvent {
     }
 }
 
+/// Describes a protocol for cancelling requests.
+public protocol Cancellable {
+    func cancel()
+}
+
 /// Defines methods for fetching Event data from a (remote) source.
 public protocol EventsService {
-    func find(query: String, handler: @escaping (Result<[EventsServiceEvent]>) -> Void)
-    func get(eventId: String, handler: @escaping (Result<EventsServiceEvent>) -> Void)
+    func find(query: String, handler: @escaping (Result<[EventsServiceEvent]>) -> Void) -> Cancellable?
+    func get(eventId: String, handler: @escaping (Result<EventsServiceEvent>) -> Void) -> Cancellable?
 }

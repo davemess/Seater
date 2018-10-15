@@ -43,9 +43,10 @@ class SeatGeekEventsService: EventsService {
     
     // FIXME: The handling implementation in both these funcs should be consolidated.
     
-    func find(query: String, handler: @escaping (Result<[EventsServiceEvent]>) -> Void) {
+    @discardableResult
+    func find(query: String, handler: @escaping (Result<[EventsServiceEvent]>) -> Void) -> Cancellable? {
         let operation: SeatGeekOperation = .findEvents(pagination: SeatGeekPagination(), clientId: apiKey, query: query)
-        remoteService.performOperation(operation) { result in
+        return remoteService.performOperation(operation) { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let response):
@@ -72,9 +73,10 @@ class SeatGeekEventsService: EventsService {
         }
     }
     
-    func get(eventId: String, handler: @escaping (Result<EventsServiceEvent>) -> Void) {
+    @discardableResult
+    func get(eventId: String, handler: @escaping (Result<EventsServiceEvent>) -> Void) -> Cancellable? {
         let operation: SeatGeekOperation = .getEvent(identifier: eventId, clientId: apiKey)
-        remoteService.performOperation(operation) { result in
+        return remoteService.performOperation(operation) { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let response):
@@ -105,3 +107,5 @@ class SeatGeekEventsService: EventsService {
         }
     }
 }
+
+extension URLSessionTask: Cancellable {}

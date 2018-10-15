@@ -31,7 +31,7 @@ public class RemoteService<T: RemoteServiceOperation> {
     
     // MARK: - public funcs
     
-    public func performOperation(_ operation: RemoteServiceOperation, completion: @escaping (Result<RemoteServiceResponse>) -> Void) {
+    public func performOperation(_ operation: RemoteServiceOperation, completion: @escaping (Result<RemoteServiceResponse>) -> Void) -> URLSessionTask? {
         do {
             let request = try operation.urlRequest()
             let task = session.dataTask(with: request) { (data, response, error)  in
@@ -40,8 +40,11 @@ public class RemoteService<T: RemoteServiceOperation> {
             }
             
             task.resume()
+            
+            return task
         } catch {
             completion(.failure(error))
+            return nil
         }
     }
 }

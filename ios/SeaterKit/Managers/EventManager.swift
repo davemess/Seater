@@ -38,8 +38,9 @@ public class EventManager {
     /// - Parameters:
     ///   - query: A string to search against. Eg. search "Ravens" for Baltimore Ravens events.
     ///   - handler: A completion handler containing a Result with an Events array or Error.
-    public func find(query: String, handler: @escaping (Result<[Event]>) -> Void) {
-        eventsService.find(query: query) { (result) in
+    @discardableResult
+    public func find(query: String, handler: @escaping (Result<[Event]>) -> Void) -> Cancellable? {
+        return eventsService.find(query: query) { (result) in
             switch result {
             case .success(let baseEvents):
                 let events = baseEvents.map { baseEvent -> Event? in
@@ -59,8 +60,9 @@ public class EventManager {
     /// - Parameters:
     ///   - event: The Event to reload.
     ///   - handler: A completion handler containing a Result with an Event or Error.
-    public func reload(event: Event, handler: @escaping (Result<Event>) -> Void) {
-        eventsService.get(eventId: event.identifier) { result in
+    @discardableResult
+    public func reload(event: Event, handler: @escaping (Result<Event>) -> Void) -> Cancellable? {
+        return eventsService.get(eventId: event.identifier) { result in
             switch result {
             case .success(let baseEvent):
                 let favorited = self.isFavorite(event: baseEvent)

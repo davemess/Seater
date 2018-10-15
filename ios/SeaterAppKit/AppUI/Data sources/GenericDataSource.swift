@@ -72,6 +72,7 @@ public class GenericDataSource<T> {
 public extension GenericDataSource {
     
     func update(with sections: [String], items: [[T]]) {
+        data = []
         load(sections: sections, items: items)
     }
 }

@@ -67,6 +67,9 @@
 		CEE163F82173FBA80042E99C /* EventAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE163F72173FBA80042E99C /* EventAction.swift */; };
 		CEE163FC21740E220042E99C /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE163FB21740E220042E99C /* Kingfisher.framework */; };
 		CEE163FF217419F90042E99C /* KingfisherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE163FE217419F90042E99C /* KingfisherService.swift */; };
+		CEE1640221742C110042E99C /* EventSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1640121742C110042E99C /* EventSearchController.swift */; };
+		CEE16404217430610042E99C /* EventSearcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE16403217430610042E99C /* EventSearcher.swift */; };
+		CEE164072174309A0042E99C /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE164062174309A0042E99C /* StringExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -166,6 +169,9 @@
 		CEE163F72173FBA80042E99C /* EventAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAction.swift; sourceTree = "<group>"; };
 		CEE163FB21740E220042E99C /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		CEE163FE217419F90042E99C /* KingfisherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherService.swift; sourceTree = "<group>"; };
+		CEE1640121742C110042E99C /* EventSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSearchController.swift; sourceTree = "<group>"; };
+		CEE16403217430610042E99C /* EventSearcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSearcher.swift; sourceTree = "<group>"; };
+		CEE164062174309A0042E99C /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				CE7B7876217255BC00691715 /* Core */,
+				CEE16405217430890042E99C /* Extensions */,
 				CE7B78F02172746000691715 /* Factories */,
 				CE7B78EB2172718700691715 /* Navigation Coordinators */,
 				CE7B7874217255AC00691715 /* Resources */,
@@ -259,6 +266,7 @@
 		CE7B7875217255B600691715 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CEE1640021742BF20042E99C /* Search */,
 				CEE1630D21728A560042E99C /* Events */,
 			);
 			path = "View Controllers";
@@ -551,6 +559,23 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
+		CEE1640021742BF20042E99C /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				CEE1640121742C110042E99C /* EventSearchController.swift */,
+				CEE16403217430610042E99C /* EventSearcher.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		CEE16405217430890042E99C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CEE164062174309A0042E99C /* StringExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -776,6 +801,7 @@
 				CEE16338217295250042E99C /* EventListTableViewCell.swift in Sources */,
 				CE7B78EA21726EF400691715 /* SeaterAnalyticEvent.swift in Sources */,
 				CE7B78B52172650700691715 /* AppLogger.swift in Sources */,
+				CEE16404217430610042E99C /* EventSearcher.swift in Sources */,
 				CE7B78F42172751B00691715 /* EventsCoordinator.swift in Sources */,
 				CE7B78C521726A1700691715 /* CrashlyticsService.swift in Sources */,
 				CEE163D22173C8CD0042E99C /* EventDetailViewController.swift in Sources */,
@@ -792,6 +818,8 @@
 				CEE1630C217288C20042E99C /* ViewControllerFactory.swift in Sources */,
 				CEE1635C21729E050042E99C /* DateViewFormatter.swift in Sources */,
 				CE7B790F2172795E00691715 /* ThemeProvider.swift in Sources */,
+				CEE164072174309A0042E99C /* StringExtensions.swift in Sources */,
+				CEE1640221742C110042E99C /* EventSearchController.swift in Sources */,
 				CE7B78632172556B00691715 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

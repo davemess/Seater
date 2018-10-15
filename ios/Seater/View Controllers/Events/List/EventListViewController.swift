@@ -38,14 +38,16 @@ class EventListViewController: UIViewController, ErrorAlertRenderer {
     // MARK: - private properties
     
     private let eventManager: EventManager
+    private let searchController: EventSearchController
     private let log = AppLogger.log(.ui)
     
     private var dataSource: GenericDataSource<Event>
     
     // MARK: - lifecycle
     
-    init(eventManager: EventManager) {
+    init(eventManager: EventManager, searchController: EventSearchController) {
         self.eventManager = eventManager
+        self.searchController = searchController
         self.dataSource = GenericDataSource<Event>(sections: [], items: [])
         
         super.init(nibName: nil, bundle: nil)
@@ -63,8 +65,6 @@ class EventListViewController: UIViewController, ErrorAlertRenderer {
         configureView()
         configureViewController()
         
-        reloadData()
-        
         os_log("%{public}@ viewDidLoad", log: log, type: .info, self.description)
     }
     
@@ -80,15 +80,9 @@ class EventListViewController: UIViewController, ErrorAlertRenderer {
         tableView.registerReusableCell(EventListTableViewCell.self)
         tableView.rowHeight = Configuration.cellHeight
         tableView.decelerationRate = Configuration.decelerationRate
-        
-        // TODO: remove refresh control when search is added
-        let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(reloadData), for: UIControl.Event.valueChanged)
-        tableView.refreshControl = refreshControl
     }
     
     private func reloadView() {
-        tableView.refreshControl?.endRefreshing()
         tableView.reloadData()
     }
     
@@ -99,31 +93,18 @@ class EventListViewController: UIViewController, ErrorAlertRenderer {
     }
     
     private func configureViewController() {
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = NSLocalizedString("Search Events...", comment: "")
+        searchController.searchBar.sizeToFit()
+        searchController.searchDelegate = self
+        
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.largeTitleDisplayMode = .always
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
         
-        self.title = NSLocalizedString("Events", comment: "")
-    }
-    
-    // MARK: - data
-    
-    // TODO: remove @objc when refresh control is removed
-    @objc private func reloadData() {
-        NetworkIndicatorManager.shared.visible = true
-        
-        eventManager.find(query: "Cow") { (result) in
-            NetworkIndicatorManager.shared.visible = false
-            
-            switch result {
-            case .success(let items):
-                os_log("%{public}@ did reload %i objects", log: self.log, type: .info, self, items.count)
-                self.dataSource.update(with: ["results"], items: [items])
-                self.reloadView()
-            case .failure(let error):
-                os_log("%{public}@ did receive error %{public}@", log: self.log, type: .error, self, error.localizedDescription)
-                self.present(error)
-            }
-        }
+        title = NSLocalizedString("Events", comment: "")
+        definesPresentationContext = true
     }
 }
 
@@ -159,6 +140,24 @@ extension EventListViewController: EventDetailViewControllerDelegate {
     func viewController(_ viewController: EventDetailViewController, didToggleFavorite event: Event) {
         if let indexPath = dataSource.indexPath(of: event) {
             self.tableView.reloadRows(at: [indexPath], with: .automatic)
+        }
+    }
+}
+
+extension EventListViewController: EventSearchControllerDelegate {
+    
+    func controller(_ controller: EventSearchController, didCompleteWith results: [Event]) {
+        os_log("%{public}@ did reload %i objects", log: self.log, type: .info, self, results.count)
+        self.dataSource.update(with: ["results"], items: [results])
+        self.reloadView()
+    }
+    
+    func controller(_ controller: EventSearchController, didFailWith error: Error) {
+        os_log("%{public}@ did receive error %{public}@", log: self.log, type: .error, self, error.localizedDescription)
+        if let error = error as? NSError, error.domain == "NSURLErrorDomain", error.code == -999 {
+        // cancellation error, don't present
+        } else {
+            self.present(error)
         }
     }
 }

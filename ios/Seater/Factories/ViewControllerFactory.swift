@@ -29,7 +29,8 @@ class ViewControllerFactory {
     func viewController(for type: ViewControllerType) -> UIViewController {
         switch type {
         case .eventList(let delegate):
-            let viewController = EventListViewController(eventManager: eventManager)
+            let searchController = EventSearchController(searchResultsController: nil)
+            let viewController = EventListViewController(eventManager: eventManager, searchController: searchController)
             viewController.delegate = delegate
             return viewController
             
