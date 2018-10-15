@@ -9,6 +9,7 @@
 import UIKit
 import SeaterKit
 import AppUI
+import Kingfisher
 import os.log
 
 /// Defines callbacks which may occur in an EventListViewController.
@@ -42,6 +43,7 @@ class EventListViewController: UIViewController, ErrorAlertRenderer {
     private let log = AppLogger.log(.ui)
     
     private var dataSource: GenericDataSource<Event>
+    private var imagePrefetcher: ImagePrefetcher?
     
     // MARK: - lifecycle
     
@@ -124,6 +126,14 @@ extension EventListViewController: UITableViewDataSource {
         let cell: EventListTableViewCell = tableView.dequeueReusableCell(indexPath)
         cell.configure(with: item)
         return cell
+    }
+}
+
+extension EventListViewController: UITableViewDataSourcePrefetching {
+    
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        let urls = indexPaths.map { return self.dataSource.item(at: $0)?.imageUrl }.compactMap { $0 }
+        ImagePrefetcher(urls: urls).start()
     }
 }
 
