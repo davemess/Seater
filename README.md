@@ -63,7 +63,7 @@ Powered by ![](./assets/seatgeek.png)
 
 ## TODO
 
-- [ ] List View
-- [ ] Detail View
-- [ ] Search
-- [ ] Persistence
+- [x] List View
+- [x] Detail View
+- [x] Search
+- [x] Persistence

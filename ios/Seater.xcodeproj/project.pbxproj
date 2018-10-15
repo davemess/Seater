@@ -6,6 +6,20 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		D9E00EEA21754AE8007E7241 /* Carthage */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = D9E00EED21754AE8007E7241 /* Build configuration list for PBXAggregateTarget "Carthage" */;
+			buildPhases = (
+				D9E00EEE21754AEE007E7241 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Carthage;
+			productName = Carthage;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		CE7B78632172556B00691715 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B78622172556B00691715 /* AppDelegate.swift */; };
 		CE7B78652172556B00691715 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B78642172556B00691715 /* EventListViewController.swift */; };
@@ -79,6 +93,7 @@
 		CEE16430217442C60042E99C /* AppAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7B78DF21726BB600691715 /* AppAnalytics.framework */; };
 		CEE16431217442C60042E99C /* AppAnalytics.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE7B78DF21726BB600691715 /* AppAnalytics.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CEE16435217442C60042E99C /* AppTheme.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE7B7904217277E300691715 /* AppTheme.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D9E00EF021754F9F007E7241 /* ErrorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E00EEF21754F9F007E7241 /* ErrorExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -188,6 +203,7 @@
 		CEE1640121742C110042E99C /* EventSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSearchController.swift; sourceTree = "<group>"; };
 		CEE16403217430610042E99C /* EventSearcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSearcher.swift; sourceTree = "<group>"; };
 		CEE164062174309A0042E99C /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		D9E00EEF21754F9F007E7241 /* ErrorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -589,6 +605,7 @@
 		CEE16405217430890042E99C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D9E00EEF21754F9F007E7241 /* ErrorExtensions.swift */,
 				CEE164062174309A0042E99C /* StringExtensions.swift */,
 			);
 			path = Extensions;
@@ -696,6 +713,9 @@
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1010;
 					};
+					D9E00EEA21754AE8007E7241 = {
+						CreatedOnToolsVersion = 10.1;
+					};
 				};
 			};
 			buildConfigurationList = CE7B785A2172556B00691715 /* Build configuration list for PBXProject "Seater" */;
@@ -714,6 +734,7 @@
 				CE7B785E2172556B00691715 /* Seater */,
 				CEE1631321728D6F0042E99C /* SeaterKit */,
 				CEE1638C2172A6180042E99C /* SeatGeekSDK */,
+				D9E00EEA21754AE8007E7241 /* Carthage */,
 			);
 		};
 /* End PBXProject section */
@@ -807,6 +828,23 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
+		D9E00EEE21754AEE007E7241 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "carthage update --platform ios\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -822,6 +860,7 @@
 				CEE16404217430610042E99C /* EventSearcher.swift in Sources */,
 				CE7B78F42172751B00691715 /* EventsCoordinator.swift in Sources */,
 				CE7B78C521726A1700691715 /* CrashlyticsService.swift in Sources */,
+				D9E00EF021754F9F007E7241 /* ErrorExtensions.swift in Sources */,
 				CEE163D22173C8CD0042E99C /* EventDetailViewController.swift in Sources */,
 				CEE163A22172A9170042E99C /* Keys.swift in Sources */,
 				CE7B78B92172668C00691715 /* AppServices.swift in Sources */,
@@ -1196,6 +1235,22 @@
 			};
 			name = Release;
 		};
+		D9E00EEB21754AE8007E7241 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D9E00EEC21754AE8007E7241 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1231,6 +1286,15 @@
 			buildConfigurations = (
 				CEE163972172A6180042E99C /* Debug */,
 				CEE163982172A6180042E99C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D9E00EED21754AE8007E7241 /* Build configuration list for PBXAggregateTarget "Carthage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9E00EEB21754AE8007E7241 /* Debug */,
+				D9E00EEC21754AE8007E7241 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

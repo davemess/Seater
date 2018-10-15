@@ -20,7 +20,7 @@ class ViewControllerFactory {
     // MARK: - private properties
     
     private lazy var eventManager: EventManager = {
-        // FIXME: This shoudl be injected, not shared access
+        // FIXME: This should be injected, not shared access
         return SeaterKit.shared.eventManager
     }()
     

@@ -154,8 +154,8 @@ extension EventListViewController: EventSearchControllerDelegate {
     
     func controller(_ controller: EventSearchController, didFailWith error: Error) {
         os_log("%{public}@ did receive error %{public}@", log: self.log, type: .error, self, error.localizedDescription)
-        if let error = error as? NSError, error.domain == "NSURLErrorDomain", error.code == -999 {
-        // cancellation error, don't present
+        if error.isURLCancellation {
+            // cancellation error, don't present
         } else {
             self.present(error)
         }
