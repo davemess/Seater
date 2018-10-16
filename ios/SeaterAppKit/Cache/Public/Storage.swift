@@ -50,8 +50,15 @@ public class Storage<Key: AnyObject, Value: CodableObject> {
     
     // MARK: - lifecycle
     
-    public init(configuration: StorageConfiguration) {
-        self.memoryCache = MemoryCache(configuration: configuration.memoryConfiguration)
-        self.diskCache = DiskCache(configuration: configuration.diskConfiguration)
+    public convenience init(configuration: StorageConfiguration) {
+        let memoryCache = MemoryCache<Key, Value>(configuration: configuration.memoryConfiguration)
+        let diskCache = DiskCache<Key, Value>(configuration: configuration.diskConfiguration)
+        
+        self.init(memoryCache: memoryCache, diskCache: diskCache)
+    }
+    
+    init(memoryCache: MemoryCache<Key, Value>, diskCache: DiskCache<Key, Value>) {
+        self.memoryCache = memoryCache
+        self.diskCache = diskCache
     }
 }
