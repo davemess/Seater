@@ -19,7 +19,7 @@ class StorageTests: XCTestCase {
         let diskCache = MockDiskCache<NSString, MockCodable>(configuration: diskConfiguration, value: mockValue)
         
         let storage = Storage<NSString, MockCodable>(memoryCache: memoryCache, diskCache: diskCache)
-        let _ = storage["test"]
+        _ = storage["test"]
         
         XCTAssertTrue(memoryCache.didReturnValue)
         XCTAssertFalse(diskCache.didReturnValue)
@@ -34,7 +34,7 @@ class StorageTests: XCTestCase {
         let diskCache = MockDiskCache<NSString, MockCodable>(configuration: diskConfiguration, value: mockValue)
         
         let storage = Storage<NSString, MockCodable>(memoryCache: memoryCache, diskCache: diskCache)
-        let _ = storage["test"]
+        _ = storage["test"]
         
         XCTAssertFalse(memoryCache.didReturnValue)
         XCTAssertTrue(diskCache.didReturnValue)
